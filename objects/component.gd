@@ -3,8 +3,9 @@ class_name ComponentInstance
 
 # replace with resource
 # where resource will have function
-@export var function : Component 
+@export var component : Component 
 @export var sprite : Sprite2D
 
-func _ready():
-    sprite.texture  = function.sprite
+func set_component(comp : Component):
+	component = comp 
+	sprite.texture = comp.sprite
