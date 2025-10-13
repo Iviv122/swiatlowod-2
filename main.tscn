@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2swm0qftsr7y"]
+
+[ext_resource type="Script" uid="uid://g0gktq42cgrq" path="res://objects/ui/function_select.gd" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://cjqnn4475ilyy" path="res://objects/ui/mouse.gd" id="1_h2yge"]
+[ext_resource type="Resource" uid="uid://c8qvwseyo0nqn" path="res://assets/sample.res" id="2_h2yge"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="mouse" type="Sprite2D" parent="."]
+script = ExtResource("1_h2yge")
+metadata/_custom_type_script = "uid://cjqnn4475ilyy"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/VBoxContainer" node_paths=PackedStringArray("mouse")]
+layout_mode = 2
+text = "option1
+"
+script = ExtResource("1_0xm2m")
+res = ExtResource("2_h2yge")
+mouse = NodePath("../../../mouse")
+metadata/_custom_type_script = "uid://g0gktq42cgrq"
