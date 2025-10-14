@@ -1,17 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0uoji56xna3x"]
+[gd_scene load_steps=6 format=3 uid="uid://c0uoji56xna3x"]
 
 [ext_resource type="Script" uid="uid://ct2cy8ncwwsjt" path="res://objects/component.gd" id="1_l37as"]
 [ext_resource type="Texture2D" uid="uid://b553c82dcwbeu" path="res://icon.svg" id="1_wbs68"]
+[ext_resource type="Texture2D" uid="uid://caa5kffyeoy5h" path="res://raw_assets/circle_dashed.png" id="4_2oae5"]
+[ext_resource type="Script" uid="uid://dgwq0qyyj6de7" path="res://objects/ui/selection_circle.gd" id="4_rptxn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l37as"]
 radius = 90.0
 
-[node name="Component" type="StaticBody2D" node_paths=PackedStringArray("sprite")]
+[node name="Component" type="StaticBody2D" node_paths=PackedStringArray("sprite", "selection_circle")]
+input_pickable = true
 script = ExtResource("1_l37as")
 sprite = NodePath("Sprite2D")
+selection_circle = NodePath("wire_circle")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_wbs68")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_l37as")
+
+[node name="wire_circle" type="Sprite2D" parent="."]
+scale = Vector2(1.4399996, 1.4399996)
+texture = ExtResource("4_2oae5")
+script = ExtResource("4_rptxn")
+metadata/_custom_type_script = "uid://dgwq0qyyj6de7"

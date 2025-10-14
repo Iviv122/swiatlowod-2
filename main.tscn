@@ -1,17 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2swm0qftsr7y"]
+[gd_scene load_steps=5 format=3 uid="uid://c2swm0qftsr7y"]
 
 [ext_resource type="Script" uid="uid://g0gktq42cgrq" path="res://objects/ui/function_select.gd" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://cjqnn4475ilyy" path="res://objects/ui/mouse.gd" id="1_h2yge"]
-[ext_resource type="Texture2D" uid="uid://b553c82dcwbeu" path="res://icon.svg" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://c0uoji56xna3x" path="res://prefabs/component.tscn" id="2_1bvp3"]
-[ext_resource type="Resource" uid="uid://c8qvwseyo0nqn" path="res://assets/sample.res" id="2_h2yge"]
+[ext_resource type="Resource" uid="uid://dng6afw2b1ax4" path="res://assets/sample.tres" id="4_1bvp3"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Mouse" type="Sprite2D" parent="."]
 self_modulate = Color(1, 0.23137255, 0.23921569, 0.78431374)
 z_index = 1
-texture = ExtResource("1_lquwl")
 script = ExtResource("1_h2yge")
 component_prefab = ExtResource("2_1bvp3")
 metadata/_custom_type_script = "uid://cjqnn4475ilyy"
@@ -33,6 +31,6 @@ layout_mode = 2
 text = "option1
 "
 script = ExtResource("1_0xm2m")
-res = ExtResource("2_h2yge")
+res = ExtResource("4_1bvp3")
 mouse = NodePath("../../../Mouse")
 metadata/_custom_type_script = "uid://g0gktq42cgrq"

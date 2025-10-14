@@ -6,7 +6,8 @@ var current_component : Component
 var is_colliding : bool
 
 @export var component_prefab : PackedScene
-@export var check_radius : float 
+@export var check_radius : float = 5 
+@export var placing_check_radius : float = 90 
 
 var current_state : MouseState = MouseState.Idle
 
@@ -28,15 +29,15 @@ func move(pos : Vector2):
 	handle_state()
 
 	if current_state == MouseState.CantPlace:
-		self_modulate = Color(1,0.5,0.5,1)
+		self_modulate = Color(1,0.5,0.5,0.5)
 	else:
-		self_modulate = Color(1,1,1,1)
+		self_modulate = Color(1,1,1,0.5)
 
 func collision_check():
 	var space_state = get_world_2d().direct_space_state
 
 	var circle_shape = CircleShape2D.new()
-	circle_shape.radius = check_radius 
+	circle_shape.radius = current_component!=null if placing_check_radius else check_radius 
 
 	transform.origin = global_position 
 
@@ -66,8 +67,11 @@ func handle_state():
 func place():
 
 	var m : ComponentInstance = component_prefab.instantiate()
+	
 	m.set_component(current_component)
 	m.global_position = global_position
+
+
 	get_tree().root.add_child(m)
 
 func stop_wiring():
