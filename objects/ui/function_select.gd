@@ -6,6 +6,7 @@ class_name FunctionSelect
 
 func _ready():
 	icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	vertical_icon_alignment = VERTICAL_ALIGNMENT_TOP
 	icon = res.sprite
 
 func _pressed() -> void:

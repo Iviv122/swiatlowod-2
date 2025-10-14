@@ -7,10 +7,15 @@ class_name ComponentInstance
 @export var sprite: Sprite2D
 @export var selection_circle: SelectionCircle
 
+var text_above: Label
+
 var neighbours: Array[ComponentInstance]
+
+signal updated(c : Component)
 
 func connect_neighbour(neighbour: ComponentInstance) -> void:
 	neighbours.append(neighbour)
+	updated.emit(self)
 	component.on_connect()
 
 func _mouse_enter() -> void:
@@ -27,6 +32,13 @@ func have_space() -> bool:
 
 func has_neighbour(a: ComponentInstance) -> bool:
 	return neighbours.has(a)
+
+func _ready() -> void:
+	text_above = ConnectionLabel.new()
+
+	text_above.setup(self)
+
+	add_child(text_above)
 
 func set_component(comp: Component):
 	component = comp
