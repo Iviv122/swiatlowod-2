@@ -6,10 +6,14 @@ var current_component : Component
 var is_colliding : bool
 
 @export var component_prefab : PackedScene
-@export var check_radius : float = 5 
+@export var check_radius : float = 1 
 @export var placing_check_radius : float = 90 
 
 var current_state : MouseState = MouseState.Idle
+
+var result
+
+var current_wire : Wire
 
 func _ready():
 	current_state = MouseState.Idle
@@ -37,7 +41,7 @@ func collision_check():
 	var space_state = get_world_2d().direct_space_state
 
 	var circle_shape = CircleShape2D.new()
-	circle_shape.radius = current_component!=null if placing_check_radius else check_radius 
+	circle_shape.radius = current_component!=null if placing_check_radius else float(check_radius)
 
 	transform.origin = global_position 
 
@@ -46,7 +50,7 @@ func collision_check():
 	query.transform = transform
 	query.collide_with_areas = true 
 
-	var result = space_state.intersect_shape(query) 
+	result = space_state.intersect_shape(query) 
 
 	var n = result.size()
 
@@ -74,14 +78,36 @@ func place():
 
 	get_tree().root.add_child(m)
 
+func start_wire():
+	# add point 1, component
+	# add point 2, mouse
+	# update point  2,
+	# on connect to component remove mouse point and add component pos
+	# call connect on neighbours
+	# exit function
+	if current_wire:
+		if result[0].collider != current_wire.start:
+			current_wire.set_end(result[0].collider)
+			current_wire = null
+	else:
+		if !current_wire:
+			current_wire = Wire.new()
+
+			current_wire.mouse = self
+			current_wire.global_position = result[0].collider.global_position 
+			current_wire.set_start(result[0].collider)
+
+			get_tree().root.add_child(current_wire)
+
 func stop_wiring():
-	pass
+	if current_wire:
+		current_wire.queue_free()
+		current_wire = null	
 
 func cancel():
+	stop_wiring()
 	if current_state == MouseState.Placing || current_state == MouseState.CantPlace:
 		clear()
-	if current_state == MouseState.Wiring:
-		stop_wiring()
 
 func _unhandled_input(event: InputEvent) -> void:
 
@@ -91,8 +117,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if current_state == MouseState.Placing:
 			place()
 		elif current_state == MouseState.Wiring:
-			#start_wire()
-			pass
+			start_wire()
 		elif current_state == MouseState.Idle:
 			pass
 		else:

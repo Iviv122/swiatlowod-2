@@ -7,6 +7,11 @@ class_name ComponentInstance
 @export var sprite : Sprite2D
 @export var selection_circle : SelectionCircle 
 
+var neighbours : Array[ComponentInstance] 
+
+func connect_neighbour(neighbour : ComponentInstance) -> void:
+	neighbours.append(neighbour)
+
 func _mouse_enter() -> void:
 	selection_circle.appear()
 func _mouse_exit() -> void:
