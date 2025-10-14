@@ -6,7 +6,7 @@ var current_component : Component
 var is_colliding : bool
 
 @export var component_prefab : PackedScene
-@export var check_radius : float = 1 
+@export var check_radius : float = 0.1 
 @export var placing_check_radius : float = 90 
 
 var current_state : MouseState = MouseState.Idle
@@ -68,8 +68,9 @@ func handle_state():
 		current_state = MouseState.Idle
 
 
-func place():
-
+func place() ->void:
+	if !current_component:
+		return
 	var m : ComponentInstance = component_prefab.instantiate()
 	
 	m.set_component(current_component)
@@ -82,19 +83,27 @@ func start_wire():
 	if current_wire:
 		if result[0].collider != current_wire.start:
 			if !current_wire.check_if_connected(result[0].collider):
-				current_wire.set_end(result[0].collider)
-				current_wire = null
+				if result[0].collider.have_space(): 
+					current_wire.set_end(result[0].collider)
+					current_wire = null
+				else:
+					#print reason
+					pass
 			else:
 				current_wire.give_error()
 	else:
 		if !current_wire:
-			current_wire = Wire.new()
+			if result[0].collider.have_space():
+				current_wire = Wire.new()
 
-			current_wire.mouse = self
-			current_wire.global_position = result[0].collider.global_position 
-			current_wire.set_start(result[0].collider)
+				current_wire.mouse = self
+				current_wire.global_position = result[0].collider.global_position 
+				current_wire.set_start(result[0].collider)
 
-			get_tree().root.add_child(current_wire)
+				get_tree().root.add_child(current_wire)
+			else:
+				# give error
+				pass
 
 func stop_wiring():
 	if current_wire:

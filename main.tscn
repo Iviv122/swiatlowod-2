@@ -12,6 +12,7 @@ self_modulate = Color(1, 0.23137255, 0.23921569, 0.78431374)
 z_index = 1
 script = ExtResource("1_h2yge")
 component_prefab = ExtResource("2_1bvp3")
+check_radius = 5.0
 metadata/_custom_type_script = "uid://cjqnn4475ilyy"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -34,5 +35,3 @@ script = ExtResource("1_0xm2m")
 res = ExtResource("4_1bvp3")
 mouse = NodePath("../../../Mouse")
 metadata/_custom_type_script = "uid://g0gktq42cgrq"
-
-[node name="Line2D" type="Line2D" parent="."]

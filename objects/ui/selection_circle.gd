@@ -12,6 +12,7 @@ func appear() -> void:
 		tween.kill()
 	tween = create_tween()
 	tween.tween_property(self,"scale",init_scale,0.3).set_trans(Tween.TRANS_SPRING)
+
 func disappear() ->void:
 	if tween:
 		tween.kill()
