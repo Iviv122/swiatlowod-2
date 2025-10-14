@@ -3,13 +3,13 @@ class_name ComponentInstance
 
 # replace with resource
 # where resource will have function
-@export var component : Component 
-@export var sprite : Sprite2D
-@export var selection_circle : SelectionCircle 
+@export var component: Component
+@export var sprite: Sprite2D
+@export var selection_circle: SelectionCircle
 
-var neighbours : Array[ComponentInstance] 
+var neighbours: Array[ComponentInstance]
 
-func connect_neighbour(neighbour : ComponentInstance) -> void:
+func connect_neighbour(neighbour: ComponentInstance) -> void:
 	neighbours.append(neighbour)
 
 func _mouse_enter() -> void:
@@ -17,8 +17,10 @@ func _mouse_enter() -> void:
 func _mouse_exit() -> void:
 	selection_circle.disappear()
 
+func has_neighbour(a: ComponentInstance) -> bool:
+	return neighbours.has(a)
 
-func set_component(comp : Component):
-	component = comp 
+func set_component(comp: Component):
+	component = comp
 	sprite.texture = comp.sprite
 	component.on_place()

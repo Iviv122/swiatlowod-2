@@ -79,16 +79,13 @@ func place():
 	get_tree().root.add_child(m)
 
 func start_wire():
-	# add point 1, component
-	# add point 2, mouse
-	# update point  2,
-	# on connect to component remove mouse point and add component pos
-	# call connect on neighbours
-	# exit function
 	if current_wire:
 		if result[0].collider != current_wire.start:
-			current_wire.set_end(result[0].collider)
-			current_wire = null
+			if !current_wire.check_if_connected(result[0].collider):
+				current_wire.set_end(result[0].collider)
+				current_wire = null
+			else:
+				current_wire.give_error()
 	else:
 		if !current_wire:
 			current_wire = Wire.new()
