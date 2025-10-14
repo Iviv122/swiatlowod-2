@@ -11,6 +11,7 @@ var neighbours: Array[ComponentInstance]
 
 func connect_neighbour(neighbour: ComponentInstance) -> void:
 	neighbours.append(neighbour)
+	component.on_connect()
 
 func _mouse_enter() -> void:
 	selection_circle.appear()
@@ -22,7 +23,6 @@ func give_max_space_error() -> void:
 	pass
 
 func have_space() -> bool:
-	print(neighbours.size(), " / ", component.max_connections )
 	return neighbours.size() != component.max_connections
 
 func has_neighbour(a: ComponentInstance) -> bool:

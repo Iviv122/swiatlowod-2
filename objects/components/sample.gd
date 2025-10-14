@@ -11,4 +11,4 @@ func on_appear() -> void:
     print("new item appeared")
 
 func on_item_trigger() -> void:
-    print("item in grid done something")  
+    print("item in grid done something") 
