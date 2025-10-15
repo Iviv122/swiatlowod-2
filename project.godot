@@ -15,9 +15,17 @@ run/main_scene="uid://c2swm0qftsr7y"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+PopTextCreatorInstance="*res://assets/pop_text_creator_instance.tscn"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+
+[global_group]
+
+pop_text=""
 
 [input]
 

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://hvbb5pj6ej6b"]
+
+[ext_resource type="Script" uid="uid://dlsgll011lycs" path="res://objects/ui/pop_text_creator.gd" id="1_paq2w"]
+
+[node name="PopTextCreatorInstance" type="Node"]
+script = ExtResource("1_paq2w")

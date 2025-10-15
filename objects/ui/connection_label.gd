@@ -16,4 +16,3 @@ func setup(c : ComponentInstance):
 
 func update(c : ComponentInstance):
 	text =  str(c.neighbours.size())+"/"+str(c.component.max_connections)
-	pass	

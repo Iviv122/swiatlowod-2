@@ -17,6 +17,7 @@ func connect_neighbour(neighbour: ComponentInstance) -> void:
 	neighbours.append(neighbour)
 	updated.emit(self)
 	component.on_connect()
+	get_tree().call_group("pop_text","pop_text",global_position,"+connected",Color.GREEN)
 
 func _mouse_enter() -> void:
 	selection_circle.appear()
