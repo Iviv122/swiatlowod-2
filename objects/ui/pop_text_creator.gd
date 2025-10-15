@@ -5,8 +5,6 @@ func _ready():
 	add_to_group("pop_text")
 
 func pop_text(pos: Vector2,text : String,color : Color = Color.WHITE,height : float = 50,lifetime : float =1):
-	print(text)
-
 	var l  = PopText.new()
 
 	l.lifetime = lifetime

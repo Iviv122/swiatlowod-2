@@ -87,9 +87,10 @@ func start_wire():
 					current_wire.set_end(result[0].collider)
 					current_wire = null
 				else:
-					PopTextCreatorInstance.pop_text(result[0].collider.global_position,"no space",Color.RED)
+					PopTextCreatorInstance.pop_text(result[0].collider.global_position,"no connection slots",Color.RED)
 					current_wire.give_error()
 			else:
+				PopTextCreatorInstance.pop_text(result[0].collider.global_position,"already connected",Color.RED)
 				current_wire.give_error()
 	else:
 		if !current_wire:
@@ -99,10 +100,10 @@ func start_wire():
 				current_wire.mouse = self
 				current_wire.global_position = result[0].collider.global_position 
 				current_wire.set_start(result[0].collider)
-
+				
 				get_tree().root.add_child(current_wire)
 			else:
-				PopTextCreatorInstance.pop_text(result[0].collider.global_position,"no space",Color.RED)
+				PopTextCreatorInstance.pop_text(result[0].collider.global_position,"no connection slots",Color.RED)
 
 func stop_wiring():
 	if current_wire:
@@ -127,8 +128,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		elif current_state == MouseState.Idle:
 			pass
 		else:
-			# play sound of incorect placing
-			pass
+			PopTextCreatorInstance.pop_text(get_global_mouse_position(),"no space",Color.RED)
 		move(get_global_mouse_position())
 	if event.is_action("cancel"):
 		cancel()

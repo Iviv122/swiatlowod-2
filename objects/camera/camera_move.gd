@@ -3,7 +3,8 @@ class_name CameraMove
 
 @export var Speed: float = 1
 
-@export var MaxZoom: int = 4
+@export var MaxZoom: float = 1
+@export var MinZoom: float = 0.4
 
 var dir: Vector2 = Vector2(0, 0)
 
@@ -31,11 +32,11 @@ func _input(event: InputEvent) -> void:
 		dir.y -= 1
 
 	if event.is_action_pressed("zoomin"):
-		zoom.x = min(zoom.x+1,MaxZoom)
-		zoom.y = min(zoom.y+1,MaxZoom)
+		zoom.x = min(zoom.x+0.2,MaxZoom)
+		zoom.y = min(zoom.y+0.2,MaxZoom)
 	if event.is_action_pressed("zoomout"):
-		zoom.x -= 1 
-		zoom.y -= 1
+		zoom.y = max(zoom.y-0.2,MinZoom)
+		zoom.x = max(zoom.y-0.2,MinZoom)
 
 	if event is InputEventMouseButton:
 		var mouse_event := event as InputEventMouseButton
@@ -53,7 +54,7 @@ func _process(delta: float) -> void:
 	if dragging:
 		var current_mouse_pos = get_viewport().get_mouse_position()
 		var off = (drag_start_mouse_pos - current_mouse_pos) * zoom
-		position = drag_start_camera_pos + off 
+		position = drag_start_camera_pos + (off/zoom) 
 
 	var half_viewport = get_viewport_rect().size / 2 * zoom
 	position.x = clamp(position.x, limit_left + half_viewport.x, limit_right - half_viewport.x)
