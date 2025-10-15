@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2swm0qftsr7y"]
+[gd_scene load_steps=7 format=3 uid="uid://c2swm0qftsr7y"]
 
 [ext_resource type="Script" uid="uid://g0gktq42cgrq" path="res://objects/ui/function_select.gd" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://cjqnn4475ilyy" path="res://objects/ui/mouse.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://c0uoji56xna3x" path="res://prefabs/component.tscn" id="2_1bvp3"]
 [ext_resource type="Resource" uid="uid://dng6afw2b1ax4" path="res://assets/sample.tres" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://coyx87dugdujn" path="res://objects/camera/camera_return_to_origin.gd" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://dumw5oi7t7v2" path="res://objects/camera/camera_move.gd" id="6_7mycd"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -35,3 +37,24 @@ script = ExtResource("1_0xm2m")
 res = ExtResource("4_1bvp3")
 mouse = NodePath("../../../Mouse")
 metadata/_custom_type_script = "uid://g0gktq42cgrq"
+
+[node name="CameraReturnToOrigin" type="Button" parent="CanvasLayer" node_paths=PackedStringArray("cam")]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -106.0
+offset_top = -15.5
+offset_bottom = 15.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "Back to start"
+script = ExtResource("5_lquwl")
+cam = NodePath("../../CameraMove")
+metadata/_custom_type_script = "uid://coyx87dugdujn"
+
+[node name="CameraMove" type="Camera2D" parent="."]
+script = ExtResource("6_7mycd")
+Speed = 500.0
+metadata/_custom_type_script = "uid://dumw5oi7t7v2"
