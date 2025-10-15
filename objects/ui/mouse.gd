@@ -87,8 +87,8 @@ func start_wire():
 					current_wire.set_end(result[0].collider)
 					current_wire = null
 				else:
-					#print reason
-					pass
+					PopTextCreatorInstance.pop_text(result[0].collider.global_position,"no space",Color.RED)
+					current_wire.give_error()
 			else:
 				current_wire.give_error()
 	else:
@@ -102,8 +102,7 @@ func start_wire():
 
 				get_tree().root.add_child(current_wire)
 			else:
-				# give error
-				pass
+				PopTextCreatorInstance.pop_text(result[0].collider.global_position,"no space",Color.RED)
 
 func stop_wiring():
 	if current_wire:

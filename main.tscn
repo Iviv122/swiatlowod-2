@@ -55,6 +55,18 @@ cam = NodePath("../../CameraMove")
 metadata/_custom_type_script = "uid://coyx87dugdujn"
 
 [node name="CameraMove" type="Camera2D" parent="."]
+zoom = Vector2(0.1, 0.1)
 script = ExtResource("6_7mycd")
 Speed = 500.0
 metadata/_custom_type_script = "uid://dumw5oi7t7v2"
+
+[node name="background" type="Node2D" parent="."]
+
+[node name="Line2D" type="Line2D" parent="background"]
+texture_repeat = 2
+points = PackedVector2Array(-10000, 0, 1815.7742, 0, 10000, 0)
+
+[node name="Line2D2" type="Line2D" parent="background"]
+texture_repeat = 2
+points = PackedVector2Array(0, -10000, 0, 10000)
+texture_mode = 1
