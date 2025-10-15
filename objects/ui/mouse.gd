@@ -120,6 +120,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		move(event.global_position)
 	if event.is_action_pressed("place"):
+		move(event.global_position)
 		if current_state == MouseState.Placing:
 			place()
 		elif current_state == MouseState.Wiring:
@@ -129,6 +130,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		else:
 			# play sound of incorect placing
 			pass
+		move(event.global_position)
 	if event.is_action("cancel"):
 		cancel()
 
