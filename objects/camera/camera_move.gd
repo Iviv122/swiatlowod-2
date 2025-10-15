@@ -36,7 +36,7 @@ func _input(event: InputEvent) -> void:
 		zoom.y = min(zoom.y+0.2,MaxZoom)
 	if event.is_action_pressed("zoomout"):
 		zoom.y = max(zoom.y-0.2,MinZoom)
-		zoom.x = max(zoom.y-0.2,MinZoom)
+		zoom.x = max(zoom.x-0.2,MinZoom)
 
 	if event is InputEventMouseButton:
 		var mouse_event := event as InputEventMouseButton
@@ -49,7 +49,7 @@ func _input(event: InputEvent) -> void:
 				dragging = false
 
 func _process(delta: float) -> void:
-	position += dir * Speed * delta
+	position += dir * Speed * delta/zoom
 
 	if dragging:
 		var current_mouse_pos = get_viewport().get_mouse_position()

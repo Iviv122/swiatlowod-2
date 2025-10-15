@@ -2,7 +2,7 @@ extends Sprite2D
 class_name Mouse 
 
 var last_function_selecter : FunctionSelect 
-var current_component : Component
+var current_component : ComponentStash 
 var is_colliding : bool
 
 @export var component_prefab : PackedScene
@@ -19,9 +19,9 @@ func _ready():
 	current_state = MouseState.Idle
 	move(global_position)
 
-func set_component(comp : Component):
+func set_component(comp : ComponentStash):
 	current_component = comp 
-	texture = comp.sprite
+	texture = comp.comp.sprite
 func clear():
 	current_component = null
 	texture = null
@@ -73,9 +73,13 @@ func place() ->void:
 		return
 	var m : ComponentInstance = component_prefab.instantiate()
 	
-	m.set_component(current_component)
+	m.set_component(current_component.comp)
 	m.global_position = global_position
 
+	current_component.pull()
+
+	if current_component.amount == 0:
+		clear()
 
 	get_tree().root.add_child(m)
 
