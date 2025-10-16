@@ -12,6 +12,10 @@ var dragging: bool = false
 var drag_start_mouse_pos: Vector2
 var drag_start_camera_pos: Vector2
 
+var init_speed = 0
+func _ready():
+	init_speed = Speed
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("left"):
 		dir.x -= 1
@@ -30,6 +34,11 @@ func _input(event: InputEvent) -> void:
 		dir.y += 1
 	if event.is_action_released("down"):
 		dir.y -= 1
+
+	if event.is_action_pressed("shift"):
+		Speed = init_speed*2
+	if event.is_action_released("shift"):
+		Speed = init_speed
 
 	if event.is_action_pressed("zoomin"):
 		zoom.x = min(zoom.x+0.2,MaxZoom)

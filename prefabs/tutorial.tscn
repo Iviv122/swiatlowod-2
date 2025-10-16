@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://de864lepfoan0"]
 
 [ext_resource type="Texture2D" uid="uid://b553c82dcwbeu" path="res://icon.svg" id="1_3a25p"]
-[ext_resource type="Script" path="res://objects/ui/change_game_state.gd" id="1_e5i0m"]
+[ext_resource type="Script" uid="uid://h1aprguxr4ry" path="res://objects/ui/change_game_state.gd" id="1_e5i0m"]
 [ext_resource type="Script" uid="uid://dn1ckfr0j1n81" path="res://objects/tutorial/tutorial.gd" id="1_i083s"]
 [ext_resource type="Script" uid="uid://douoydjc21jxw" path="res://objects/tutorial/continue_totorial.gd" id="3_k0cqb"]
 
@@ -65,4 +65,4 @@ metadata/_custom_type_script = "uid://douoydjc21jxw"
 layout_mode = 2
 text = "NO"
 script = ExtResource("1_e5i0m")
-remove = [NodePath("")]
+remove = [NodePath("../../../..")]

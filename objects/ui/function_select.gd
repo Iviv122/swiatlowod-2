@@ -5,6 +5,11 @@ class_name FunctionSelect
 @export var mouse : Mouse 
 
 func _ready():
+	if res:
+		setup(res)
+
+func setup(_res : ComponentStash):
+	res = _res
 	icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	vertical_icon_alignment = VERTICAL_ALIGNMENT_TOP
 	icon = res.comp.sprite 
