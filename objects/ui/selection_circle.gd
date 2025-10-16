@@ -7,6 +7,7 @@ var tween
 
 func _ready():
 	init_scale = scale
+
 func appear() -> void:
 	if tween:
 		tween.kill()

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://r0kkx1hotyc7"]
+
+[ext_resource type="Script" uid="uid://d5pl0xs8x4ta" path="res://objects/game_state.gd" id="1_2pyqt"]
+
+[node name="GameStateInstance" type="Node"]
+script = ExtResource("1_2pyqt")
+metadata/_custom_type_script = "uid://d5pl0xs8x4ta"
