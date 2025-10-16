@@ -4,4 +4,3 @@
 
 [node name="GameStateInstance" type="Node"]
 script = ExtResource("1_2pyqt")
-metadata/_custom_type_script = "uid://d5pl0xs8x4ta"

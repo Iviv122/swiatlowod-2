@@ -38,6 +38,8 @@ func _input(event: InputEvent) -> void:
 		zoom.y = max(zoom.y-0.2,MinZoom)
 		zoom.x = max(zoom.x-0.2,MinZoom)
 
+
+
 	if event is InputEventMouseButton:
 		var mouse_event := event as InputEventMouseButton
 		if mouse_event.button_index == MOUSE_BUTTON_MIDDLE:
@@ -49,6 +51,9 @@ func _input(event: InputEvent) -> void:
 				dragging = false
 
 func _process(delta: float) -> void:
+	if GameStateInstance.state != GameState.State.Playing: 
+		return
+
 	position += dir * Speed * delta/zoom
 
 	if dragging:

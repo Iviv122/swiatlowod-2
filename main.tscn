@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cjqnn4475ilyy" path="res://objects/ui/mouse.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://c0uoji56xna3x" path="res://prefabs/component.tscn" id="2_1bvp3"]
 [ext_resource type="Resource" uid="uid://dng6afw2b1ax4" path="res://assets/sample.tres" id="4_1bvp3"]
-[ext_resource type="Script" uid="uid://ckbxto3f132l4" path="res://objects/components/component_stash.gd" id="5_272bh"]
+[ext_resource type="Script" path="res://objects/components/component_stash.gd" id="5_272bh"]
 [ext_resource type="Script" uid="uid://coyx87dugdujn" path="res://objects/camera/camera_return_to_origin.gd" id="5_lquwl"]
 [ext_resource type="Script" uid="uid://dumw5oi7t7v2" path="res://objects/camera/camera_move.gd" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://de864lepfoan0" path="res://prefabs/tutorial.tscn" id="8_5vw27"]
