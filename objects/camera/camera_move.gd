@@ -48,7 +48,6 @@ func _input(event: InputEvent) -> void:
 		zoom.x = max(zoom.x-0.2,MinZoom)
 
 
-
 	if event is InputEventMouseButton:
 		var mouse_event := event as InputEventMouseButton
 		if mouse_event.button_index == MOUSE_BUTTON_MIDDLE:
