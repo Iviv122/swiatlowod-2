@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://y8sqpqrcqhd0"]
+
+[ext_resource type="Script" uid="uid://cy6wrxvrnay53" path="res://objects/in_field_ui/money_particle_spawner.gd" id="1_w3mne"]
+
+[node name="MoneyParticleSpawnerInstance" type="Node"]
+script = ExtResource("1_w3mne")
+metadata/_custom_type_script = "uid://cy6wrxvrnay53"

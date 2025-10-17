@@ -44,7 +44,7 @@ func trigger() -> void:
 	t = create_tween()
 	
 	t.tween_property(self,"scale",Vector2(1.2,1.2),0.1).set_trans(Tween.TRANS_SPRING)
-	t.tween_property(self,"scale",Vector2(1,1),0.1).set_delay(0.1).set_trans(Tween.TRANS_SPRING)
+	t.tween_property(self,"scale",Vector2(1,1),0.1).set_delay(0.05).set_trans(Tween.TRANS_SPRING)
 
 	component.trigger(neighbours,self)
 

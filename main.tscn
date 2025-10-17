@@ -1,12 +1,13 @@
-[gd_scene load_steps=19 format=4 uid="uid://c2swm0qftsr7y"]
+[gd_scene load_steps=20 format=4 uid="uid://c2swm0qftsr7y"]
 
 [ext_resource type="Script" uid="uid://g0gktq42cgrq" path="res://objects/ui/function_select.gd" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://cjqnn4475ilyy" path="res://objects/in_field_ui/mouse.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://c0uoji56xna3x" path="res://prefabs/component.tscn" id="2_1bvp3"]
 [ext_resource type="Script" uid="uid://dfxhw5uslaflr" path="res://objects/ui/option_display.gd" id="3_efxa6"]
-[ext_resource type="Resource" uid="uid://dng6afw2b1ax4" path="res://assets/sample.tres" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://bpaa3lqv2t865" path="res://objects/progression/points.gd" id="3_w48qg"]
 [ext_resource type="Script" path="res://objects/components/component_stash.gd" id="5_272bh"]
 [ext_resource type="Script" uid="uid://coyx87dugdujn" path="res://objects/camera/camera_return_to_origin.gd" id="5_lquwl"]
+[ext_resource type="Resource" uid="uid://dnthphocbrclx" path="res://assets/concrete_components/factory.tres" id="5_ycdy4"]
 [ext_resource type="Script" uid="uid://dumw5oi7t7v2" path="res://objects/camera/camera_move.gd" id="6_7mycd"]
 [ext_resource type="Script" uid="uid://dxa4nu2h52p32" path="res://objects/progression/end_turn.gd" id="7_4c57u"]
 [ext_resource type="Resource" uid="uid://bhhj6xciig2mk" path="res://assets/concrete_components/entry_point.res" id="7_dg77c"]
@@ -16,7 +17,7 @@
 
 [sub_resource type="Resource" id="Resource_5vw27"]
 script = ExtResource("5_272bh")
-comp = ExtResource("4_1bvp3")
+comp = ExtResource("5_ycdy4")
 amount = 5
 metadata/_custom_type_script = "uid://ckbxto3f132l4"
 
@@ -54,15 +55,11 @@ metadata/_custom_type_script = "uid://cjqnn4475ilyy"
 [node name="InGameUI" type="CanvasLayer" parent="."]
 
 [node name="points" type="Label" parent="InGameUI"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
+offset_right = 80.0
 offset_bottom = 16.0
-grow_horizontal = 2
 text = "50/50"
-horizontal_alignment = 1
+script = ExtResource("3_w48qg")
+metadata/_custom_type_script = "uid://bpaa3lqv2t865"
 
 [node name="VBoxContainer" type="HBoxContainer" parent="InGameUI"]
 anchors_preset = 12
@@ -120,8 +117,12 @@ cam = NodePath("../../CameraMove")
 metadata/_custom_type_script = "uid://coyx87dugdujn"
 
 [node name="Button" type="Button" parent="InGameUI"]
-offset_right = 136.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -136.0
 offset_bottom = 24.0
+grow_horizontal = 0
 text = "End Turn"
 script = ExtResource("7_4c57u")
 metadata/_custom_type_script = "uid://dxa4nu2h52p32"

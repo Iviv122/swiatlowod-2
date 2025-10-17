@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 PopTextCreatorInstance="*res://prefabs/pop_text_creator_instance.tscn"
 GameStateInstance="*res://prefabs/game_state_instance.tscn"
+MoneyParticleSpawnerInstance="*res://prefabs/MoneyParticleSpawnerInstance.tscn"
 
 [editor_plugins]
 
