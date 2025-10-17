@@ -37,7 +37,15 @@ func on_turn_start() -> void:
 func on_turn_end() -> void:
 	component.on_turn_end(neighbours,self)
 
+var t : Tween
 func trigger() -> void:
+	if t:
+		t.kill()
+	t = create_tween()
+	
+	t.tween_property(self,"scale",Vector2(1.2,1.2),0.1).set_trans(Tween.TRANS_SPRING)
+	t.tween_property(self,"scale",Vector2(1,1),0.1).set_delay(0.1).set_trans(Tween.TRANS_SPRING)
+
 	component.trigger(neighbours,self)
 
 func send_pulse(i : int) -> void:
