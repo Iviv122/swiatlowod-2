@@ -1,5 +1,5 @@
 extends Component
-class_name ActivateNeighbour 
+class_name EntryPoint 
 
 var was_triggered = false
 

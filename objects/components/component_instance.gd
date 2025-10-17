@@ -41,7 +41,7 @@ func trigger() -> void:
 	component.trigger(neighbours,self)
 
 func send_pulse(i : int) -> void:
-	wires[i].play_effect()
+	wires[i].play_effect(self,neighbours[i])
 
 func _ready() -> void:
 	text_above = ConnectionLabel.new()
