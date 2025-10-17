@@ -1,5 +1,5 @@
 extends Line2D
-class_name Wire
+class_name WireProvider
 
 var mouse: Mouse
 
@@ -27,7 +27,7 @@ func set_end(comp: ComponentInstance):
 	finish = comp
 	add_point(finish.global_position)
 
-	var l: Line2D = Line2D.new()
+	var l: Wire = Wire.new()
 	l.add_point(start.global_position)
 	l.add_point(finish.global_position)
 
@@ -36,7 +36,10 @@ func set_end(comp: ComponentInstance):
 	l.material = material.duplicate()
 	l.z_index -= 1
 
-	connect_neighbours()
+	
+	start.connect_neighbour(finish,l)
+	finish.connect_neighbour(start,l)
+
 
 	get_tree().root.add_child(l)
 	queue_free()
@@ -62,9 +65,6 @@ func give_error():
 	).set_delay(0.1).set_trans(Tween.TRANS_SPRING)
 
 
-func connect_neighbours():
-	start.connect_neighbour(finish)
-	finish.connect_neighbour(start)
 
 func _process(_delta):
 	points[1] = mouse.global_position - global_position

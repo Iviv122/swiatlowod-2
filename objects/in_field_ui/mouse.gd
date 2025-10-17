@@ -13,7 +13,7 @@ var current_state : MouseState = MouseState.Idle
 
 var result
 
-var current_wire : Wire
+var current_wire : WireProvider 
 
 func _ready():
 	current_state = MouseState.Idle
@@ -99,7 +99,7 @@ func start_wire():
 	else:
 		if !current_wire:
 			if result[0].collider.have_space():
-				current_wire = Wire.new()
+				current_wire = WireProvider.new()
 
 				current_wire.mouse = self
 				current_wire.global_position = result[0].collider.global_position 

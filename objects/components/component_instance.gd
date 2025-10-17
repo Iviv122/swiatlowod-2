@@ -8,13 +8,15 @@ class_name ComponentInstance
 var text_above: Label
 
 var neighbours: Array[ComponentInstance]
+var wires: Array[Wire]
 
 signal updated(c : Component)
 
-func connect_neighbour(neighbour: ComponentInstance) -> void:
+func connect_neighbour(neighbour: ComponentInstance,wire : Wire) -> void:
 	neighbours.append(neighbour)
 	updated.emit(self)
 	component.on_connect(neighbour)
+	wires.append(wire)
 	PopTextCreatorInstance.pop_text(global_position,"connected",Color.GREEN)
 
 func _mouse_enter() -> void:
@@ -29,17 +31,24 @@ func have_space() -> bool:
 func has_neighbour(a: ComponentInstance) -> bool:
 	return neighbours.has(a)
 
+func on_turn_start() -> void:
+	component.on_turn_start(self)
+
 func on_turn_end() -> void:
-	component.on_turn_end(neighbours)
+	component.on_turn_end(neighbours,self)
 
 func trigger() -> void:
-	component.trigger(neighbours)
+	component.trigger(neighbours,self)
+
+func send_pulse(i : int) -> void:
+	wires[i].play_effect()
 
 func _ready() -> void:
 	text_above = ConnectionLabel.new()
 	text_above.setup(self)
 
 	add_to_group("on_turn_end")
+	add_to_group("on_turn_start")
 	add_child(text_above)
 
 func set_component(comp: Component):

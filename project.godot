@@ -28,6 +28,7 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 pop_text=""
 on_turn_end=""
+on_turn_start=""
 
 [gui]
 

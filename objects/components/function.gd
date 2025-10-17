@@ -19,7 +19,9 @@ func on_appear() -> void:
     pass
 func on_item_trigger() -> void:
     pass
-func on_turn_end(_neighbour : Array[ComponentInstance]) -> void:
+func on_turn_end(_neighbour : Array[ComponentInstance],s : ComponentInstance ) -> void:
     pass
-func trigger(_neighbour : Array[ComponentInstance]) -> void:
+func trigger(_neighbour : Array[ComponentInstance],s : ComponentInstance ) -> void:
+    pass
+func on_turn_start(s : ComponentInstance) -> void:
     pass
