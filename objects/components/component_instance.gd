@@ -40,7 +40,6 @@ func _ready() -> void:
 	text_above.setup(self)
 
 	add_to_group("on_turn_end")
-
 	add_child(text_above)
 
 func set_component(comp: Component):

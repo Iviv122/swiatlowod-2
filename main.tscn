@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=4 uid="uid://c2swm0qftsr7y"]
 
 [ext_resource type="Script" uid="uid://g0gktq42cgrq" path="res://objects/ui/function_select.gd" id="1_0xm2m"]
-[ext_resource type="Script" uid="uid://cjqnn4475ilyy" path="res://objects/ui/mouse.gd" id="1_h2yge"]
+[ext_resource type="Script" uid="uid://cjqnn4475ilyy" path="res://objects/in_field_ui/mouse.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://c0uoji56xna3x" path="res://prefabs/component.tscn" id="2_1bvp3"]
 [ext_resource type="Script" uid="uid://dfxhw5uslaflr" path="res://objects/ui/option_display.gd" id="3_efxa6"]
 [ext_resource type="Resource" uid="uid://dng6afw2b1ax4" path="res://assets/sample.tres" id="4_1bvp3"]
