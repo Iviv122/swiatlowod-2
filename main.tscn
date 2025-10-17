@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://c2swm0qftsr7y"]
+[gd_scene load_steps=19 format=4 uid="uid://c2swm0qftsr7y"]
 
 [ext_resource type="Script" uid="uid://g0gktq42cgrq" path="res://objects/ui/function_select.gd" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://cjqnn4475ilyy" path="res://objects/in_field_ui/mouse.gd" id="1_h2yge"]
@@ -9,8 +9,9 @@
 [ext_resource type="Script" uid="uid://coyx87dugdujn" path="res://objects/camera/camera_return_to_origin.gd" id="5_lquwl"]
 [ext_resource type="Script" uid="uid://dumw5oi7t7v2" path="res://objects/camera/camera_move.gd" id="6_7mycd"]
 [ext_resource type="Script" uid="uid://dxa4nu2h52p32" path="res://objects/progression/end_turn.gd" id="7_4c57u"]
-[ext_resource type="Resource" uid="uid://bhhj6xciig2mk" path="res://assets/concrete_components/activate_neighbour.res" id="7_dg77c"]
+[ext_resource type="Resource" uid="uid://bhhj6xciig2mk" path="res://assets/concrete_components/entry_point.res" id="7_dg77c"]
 [ext_resource type="PackedScene" uid="uid://de864lepfoan0" path="res://prefabs/tutorial.tscn" id="8_5vw27"]
+[ext_resource type="Resource" uid="uid://dxmht4utnnhpx" path="res://assets/concrete_components/repeater.tres" id="8_ycdy4"]
 [ext_resource type="Texture2D" uid="uid://ryomm0grwrvk" path="res://raw_assets/dashed_tile.png" id="9_kek77"]
 
 [sub_resource type="Resource" id="Resource_5vw27"]
@@ -23,6 +24,12 @@ metadata/_custom_type_script = "uid://ckbxto3f132l4"
 script = ExtResource("5_272bh")
 comp = ExtResource("7_dg77c")
 amount = 2
+metadata/_custom_type_script = "uid://ckbxto3f132l4"
+
+[sub_resource type="Resource" id="Resource_w48qg"]
+script = ExtResource("5_272bh")
+comp = ExtResource("8_ycdy4")
+amount = 1
 metadata/_custom_type_script = "uid://ckbxto3f132l4"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4c57u"]
@@ -84,6 +91,15 @@ text = "option1
 "
 script = ExtResource("1_0xm2m")
 res = SubResource("Resource_ycdy4")
+mouse = NodePath("../../../Mouse")
+metadata/_custom_type_script = "uid://g0gktq42cgrq"
+
+[node name="Button3" type="Button" parent="InGameUI/VBoxContainer" node_paths=PackedStringArray("mouse")]
+layout_mode = 2
+text = "option1
+"
+script = ExtResource("1_0xm2m")
+res = SubResource("Resource_w48qg")
 mouse = NodePath("../../../Mouse")
 metadata/_custom_type_script = "uid://g0gktq42cgrq"
 
