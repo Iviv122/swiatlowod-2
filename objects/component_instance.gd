@@ -14,7 +14,7 @@ signal updated(c : Component)
 func connect_neighbour(neighbour: ComponentInstance) -> void:
 	neighbours.append(neighbour)
 	updated.emit(self)
-	component.on_connect()
+	component.on_connect(neighbour)
 	PopTextCreatorInstance.pop_text(global_position,"connected",Color.GREEN)
 
 func _mouse_enter() -> void:
@@ -29,14 +29,21 @@ func have_space() -> bool:
 func has_neighbour(a: ComponentInstance) -> bool:
 	return neighbours.has(a)
 
+func on_turn_end() -> void:
+	component.on_turn_end(neighbours)
+
+func trigger() -> void:
+	component.trigger(neighbours)
+
 func _ready() -> void:
 	text_above = ConnectionLabel.new()
-
 	text_above.setup(self)
+
+	add_to_group("on_turn_end")
 
 	add_child(text_above)
 
 func set_component(comp: Component):
-	component = comp
+	component = comp.duplicate()
 	sprite.texture = comp.sprite
 	component.on_place()

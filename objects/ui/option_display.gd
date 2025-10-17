@@ -1,4 +1,4 @@
-extends VBoxContainer
+extends HBoxContainer
 class_name OptionDisplay
 
 func add_option(_res : ComponentStash) -> void:
