@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="ComponentPack" load_steps=10 format=3 uid="uid://dm2hffsaou86d"]
+
+[ext_resource type="Script" path="res://objects/components/component_stash.gd" id="1_hrilq"]
+[ext_resource type="Resource" uid="uid://bhhj6xciig2mk" path="res://assets/concrete_components/entry_point.res" id="2_hrilq"]
+[ext_resource type="Script" uid="uid://dvai7sil2ukcl" path="res://objects/select_screen/component_pack.gd" id="2_xq4l6"]
+[ext_resource type="Resource" uid="uid://dnthphocbrclx" path="res://assets/concrete_components/factory.tres" id="3_hrilq"]
+[ext_resource type="Script" uid="uid://dmr3lmasdr0aj" path="res://objects/components_concrete/repeater.gd" id="4_406ab"]
+
+[sub_resource type="Resource" id="Resource_cuyak"]
+script = ExtResource("1_hrilq")
+comp = ExtResource("2_hrilq")
+amount = 2
+metadata/_custom_type_script = "uid://ckbxto3f132l4"
+
+[sub_resource type="Resource" id="Resource_4mqfq"]
+script = ExtResource("1_hrilq")
+comp = ExtResource("3_hrilq")
+amount = 2
+metadata/_custom_type_script = "uid://ckbxto3f132l4"
+
+[sub_resource type="Resource" id="Resource_34vyv"]
+script = ExtResource("4_406ab")
+metadata/_custom_type_script = "uid://dmr3lmasdr0aj"
+
+[sub_resource type="Resource" id="Resource_0mtsw"]
+script = ExtResource("1_hrilq")
+comp = SubResource("Resource_34vyv")
+amount = 1
+metadata/_custom_type_script = "uid://ckbxto3f132l4"
+
+[resource]
+script = ExtResource("2_xq4l6")
+components = Array[ExtResource("1_hrilq")]([SubResource("Resource_cuyak"), SubResource("Resource_4mqfq"), SubResource("Resource_0mtsw")])
+metadata/_custom_type_script = "uid://dvai7sil2ukcl"

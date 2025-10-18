@@ -16,10 +16,10 @@ func on_turn_end():
 	await get_tree().create_timer(turn_length).timeout
 	get_tree().call_group("on_turn_start","on_turn_start")
 
-	turn+=1
-
-	points_label.set_requirement(turn*10)
 	if points_label.points >= points_label.req:
 		GameStateInstance.change_state(GameState.State.Selecting)
 	else:
 		print("Lose")
+
+	turn+=1
+	points_label.set_requirement(turn*10)

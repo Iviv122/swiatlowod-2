@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://vqw28lgx1ruv"
-path="res://.godot/imported/IBM_EGA_8x8.woff-a9deab9e6bb6297bb2d5ad7797bba840.fontdata"
+path="res://.godot/imported/IBM_EGA_8x8.woff-ccef27dd6a5dd70917cecf5f8e157f38.fontdata"
 
 [deps]
 
-source_file="res://assets/IBM_EGA_8x8.woff"
-dest_files=["res://.godot/imported/IBM_EGA_8x8.woff-a9deab9e6bb6297bb2d5ad7797bba840.fontdata"]
+source_file="res://raw_assets/IBM_EGA_8x8.woff"
+dest_files=["res://.godot/imported/IBM_EGA_8x8.woff-ccef27dd6a5dd70917cecf5f8e157f38.fontdata"]
 
 [params]
 
