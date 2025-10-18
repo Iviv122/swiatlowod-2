@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Router" load_steps=3 format=3 uid="uid://lcw6k8ta0ybm"]
+
+[ext_resource type="Script" uid="uid://bwv32o2dpsjrq" path="res://objects/components_concrete/router.gd" id="1_iludu"]
+[ext_resource type="Texture2D" uid="uid://d2vrk4mubr0fc" path="res://raw_assets/router.png" id="2_aq2b5"]
+
+[resource]
+script = ExtResource("1_iludu")
+Name = "Router"
+on_trigger_desc = "Send signal to random neighbour"
+max_connections = 5
+sprite = ExtResource("2_aq2b5")
+metadata/_custom_type_script = "uid://bwv32o2dpsjrq"

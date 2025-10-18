@@ -24,7 +24,7 @@ GameProgressionInstance="*res://prefabs/game_progression_instance.tscn"
 
 [display]
 
-window/size/mode=2
+window/size/mode=3
 
 [editor_plugins]
 
