@@ -11,9 +11,9 @@ class_name Component
 
 signal triggered()
 
-func on_place() -> void:
+func on_place(s : ComponentInstance) -> void:
     pass
-func on_connect(_neighbour : ComponentInstance) -> void:
+func on_connect(_neighbour : ComponentInstance,s : ComponentInstance) -> void:
     pass
 func on_appear() -> void:
     pass
@@ -26,5 +26,5 @@ func trigger(_neighbour : Array[ComponentInstance],s : ComponentInstance,signal_
 func on_turn_start(s : ComponentInstance) -> void:
     pass
 # change compoment on right click
-func switch() -> void:
+func switch(_neighbour : Array[ComponentInstance],s : ComponentInstance )-> void:
     pass

@@ -15,7 +15,7 @@ signal updated(c : Component)
 func connect_neighbour(neighbour: ComponentInstance,wire : Wire) -> void:
 	neighbours.append(neighbour)
 	updated.emit(self)
-	component.on_connect(neighbour)
+	component.on_connect(neighbour,self)
 	wires.append(wire)
 	PopTextCreatorInstance.pop_text(global_position,"connected",Color.GREEN)
 
@@ -49,7 +49,7 @@ func trigger() -> void:
 	component.trigger(neighbours,self,self)
 
 func switch() -> void:
-	component.switch()
+	component.switch(neighbours,self)
 
 func trigger_outside(signal_owner : ComponentInstance):
 	if t:
@@ -67,12 +67,12 @@ func send_pulse(i : int) -> void:
 func _ready() -> void:
 	text_above = ConnectionLabel.new()
 	text_above.setup(self)
-
+	text_above.global_position += global_position
 	add_to_group("on_turn_end")
 	add_to_group("on_turn_start")
-	add_child(text_above)
+	get_tree().root.add_child(text_above)
 
 func set_component(comp: Component):
 	component = comp.duplicate()
 	sprite.texture = comp.sprite
-	component.on_place()
+	component.on_place(self)
