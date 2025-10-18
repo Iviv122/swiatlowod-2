@@ -114,10 +114,9 @@ func stop_wiring():
 		current_wire.queue_free()
 		current_wire = null	
 
-func cancel():
-	stop_wiring()
-	if current_state == MouseState.Placing || current_state == MouseState.CantPlace:
-		clear()
+func modify_component():
+	if result[0].collider:
+		result[0].collider.switch()
 
 func _unhandled_input(event: InputEvent) -> void:
 
@@ -134,8 +133,13 @@ func _unhandled_input(event: InputEvent) -> void:
 		else:
 			PopTextCreatorInstance.pop_text(get_global_mouse_position(),"no space",Color.RED)
 		move(get_global_mouse_position())
-	if event.is_action("cancel"):
-		cancel()
+	if event.is_action_pressed("cancel"):
+		if current_state == MouseState.Wiring:
+			modify_component()
+		elif  current_state == MouseState.Placing || current_state == MouseState.CantPlace:
+			clear()
+		
+		stop_wiring()
 
 
 enum MouseState{

@@ -46,7 +46,20 @@ func trigger() -> void:
 	t.tween_property(self,"scale",Vector2(1.2,1.2),0.1).set_trans(Tween.TRANS_SPRING)
 	t.tween_property(self,"scale",Vector2(1,1),0.1).set_delay(0.05).set_trans(Tween.TRANS_SPRING)
 
-	component.trigger(neighbours,self)
+	component.trigger(neighbours,self,self)
+
+func switch() -> void:
+	component.switch()
+
+func trigger_outside(signal_owner : ComponentInstance):
+	if t:
+		t.kill()
+	t = create_tween()
+		
+	t.tween_property(self,"scale",Vector2(1.2,1.2),0.1).set_trans(Tween.TRANS_SPRING)
+	t.tween_property(self,"scale",Vector2(1,1),0.1).set_delay(0.05).set_trans(Tween.TRANS_SPRING)
+
+	component.trigger(neighbours,self,signal_owner)
 
 func send_pulse(i : int) -> void:
 	wires[i].play_effect(self,neighbours[i])

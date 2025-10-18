@@ -9,4 +9,5 @@ Name = "Router"
 on_trigger_desc = "Send signal to random neighbour"
 max_connections = 5
 sprite = ExtResource("2_aq2b5")
+priority_level = 2
 metadata/_custom_type_script = "uid://bwv32o2dpsjrq"

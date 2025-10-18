@@ -21,7 +21,10 @@ func on_item_trigger() -> void:
     pass
 func on_turn_end(_neighbour : Array[ComponentInstance],s : ComponentInstance ) -> void:
     pass
-func trigger(_neighbour : Array[ComponentInstance],s : ComponentInstance ) -> void:
+func trigger(_neighbour : Array[ComponentInstance],s : ComponentInstance,signal_owner : ComponentInstance) -> void:
     pass
 func on_turn_start(s : ComponentInstance) -> void:
+    pass
+# change compoment on right click
+func switch() -> void:
     pass

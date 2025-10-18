@@ -9,4 +9,5 @@ Name = "Factory"
 on_trigger_desc = "Produce 1 value"
 max_connections = 2
 sprite = ExtResource("2_1ny0p")
+priority_level = 10
 metadata/_custom_type_script = "uid://ckuewexy0fnce"

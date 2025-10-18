@@ -5,9 +5,9 @@ var was_triggered = false
 
 func on_turn_end(_neighbours : Array[ComponentInstance],s : ComponentInstance) -> void:
 	was_triggered = false 
-	trigger(_neighbours,s)
+	trigger(_neighbours,s,s)
 
-func trigger(_neighbours : Array[ComponentInstance], s :ComponentInstance) -> void:
+func trigger(_neighbours : Array[ComponentInstance],s : ComponentInstance,signal_owner : ComponentInstance) -> void:
 	if !was_triggered:
 		if _neighbours.size() >0:	
 			was_triggered = true

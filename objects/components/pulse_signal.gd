@@ -1,6 +1,8 @@
 extends Sprite2D
 class_name PulseSignal
 
+var signal_owner : ComponentInstance
+
 func _ready():
 
 	texture = load("res://raw_assets/connection_pulse.png")
@@ -16,5 +18,5 @@ func send(d : ComponentInstance):
 	var t = create_tween()
 	t.tween_property(self,"global_position",d.global_position,0.2).set_trans(Tween.TRANS_SINE)
 	await get_tree().create_timer(0.2).timeout
-	d.trigger()
+	d.trigger_outside(signal_owner)
 	queue_free()
