@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ci8xlau6oefuv"]
+
+[ext_resource type="Script" uid="uid://b0d5brtqnivof" path="res://objects/progression/game_progression.gd" id="1_vmv3v"]
+
+[node name="GameProgressionInstance" type="Node"]
+script = ExtResource("1_vmv3v")
+metadata/_custom_type_script = "uid://b0d5brtqnivof"

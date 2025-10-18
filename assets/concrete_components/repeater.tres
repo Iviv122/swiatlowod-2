@@ -6,7 +6,9 @@
 [resource]
 script = ExtResource("1_ogrxd")
 Name = "Repeater"
-on_trigger_desc = "Send signal to all neighbours"
+on_trigger_desc = "Send signal to all neighbours.
+First time 100% chance.
+Then 10% chance."
 max_connections = 3
 sprite = ExtResource("2_4uj4n")
 metadata/_custom_type_script = "uid://dmr3lmasdr0aj"
