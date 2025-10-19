@@ -6,10 +6,10 @@ var target_dir: int = 0
 var ss: ComponentInstance
 
 func switch(_neighbour: Array[ComponentInstance], s: ComponentInstance) -> void:
+	if _neighbour.size() == 0:
+		return
 	if 1 == _neighbour.size():
-		target_dir = 1
-	elif 0 == _neighbour.size():
-		pass
+		target_dir = 0
 	else:
 		if target_dir == 1:
 			target_dir = 0
