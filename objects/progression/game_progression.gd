@@ -8,19 +8,25 @@ var end_turn_button : EndTurn
 var turn = 0
 var turn_length : float = 5
 
+signal lost(turns : int)
+
 func _ready():
 	add_to_group("on_turn_end")
+	turn = 0
 
 func on_turn_end():
 
 	await get_tree().create_timer(turn_length).timeout
 	get_tree().call_group("on_turn_start","on_turn_start")
 
+	await get_tree().process_frame
+
 	if points_label.points >= points_label.req:
 		GameStateInstance.change_state(GameState.State.Selecting)
+		turn+=1
+		points_label.set_requirement((turn*10)*(1+turn*0.1))
 	else:
 		GameStateInstance.change_state(GameState.State.Lost)
+		lost.emit(turn)
 
-	await get_tree().process_frame
-	turn+=1
-	points_label.set_requirement((turn*10)*(1+turn*0.1))
+	
