@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Accamulator" load_steps=3 format=3 uid="uid://d4d0c5x6gm8n2"]
+
+[ext_resource type="Script" uid="uid://drab8or3yl0pl" path="res://objects/components_concrete/accamulator.gd" id="1_dt837"]
+[ext_resource type="Texture2D" uid="uid://caqs2866ax2in" path="res://raw_assets/accamulator.png" id="2_sjtdl"]
+
+[resource]
+script = ExtResource("1_dt837")
+on_turn_end_desc = "Triggers itself"
+on_trigger_desc = "Triggers neighbour n times
+Where n is grid size
+Can be triggered once per turn"
+max_connections = 1
+sprite = ExtResource("2_sjtdl")
+metadata/_custom_type_script = "uid://drab8or3yl0pl"

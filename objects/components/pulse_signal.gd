@@ -15,6 +15,7 @@ func on_turn_start():
 	queue_free()
 
 func send(d : ComponentInstance):
+
 	var t = create_tween()
 	t.tween_property(self,"global_position",d.global_position,0.2).set_trans(Tween.TRANS_SINE)
 	await get_tree().create_timer(0.2).timeout

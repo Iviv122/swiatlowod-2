@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://c2swm0qftsr7y"]
+[gd_scene load_steps=32 format=4 uid="uid://c2swm0qftsr7y"]
 
 [ext_resource type="Script" uid="uid://g0gktq42cgrq" path="res://objects/ui/function_select.gd" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://cjqnn4475ilyy" path="res://objects/in_field_ui/mouse.gd" id="1_h2yge"]
@@ -18,6 +18,7 @@
 [ext_resource type="Resource" uid="uid://lcw6k8ta0ybm" path="res://assets/concrete_components/router.tres" id="11_82xsv"]
 [ext_resource type="Resource" uid="uid://dt7uiahtfr5qj" path="res://assets/concrete_components/dns.tres" id="12_getpj"]
 [ext_resource type="Script" uid="uid://b3tqh0p6dvmqm" path="res://objects/progression/turn_timer.gd" id="12_vivmo"]
+[ext_resource type="Resource" uid="uid://d4d0c5x6gm8n2" path="res://assets/concrete_components/accamulator.tres" id="13_ryguw"]
 [ext_resource type="Script" uid="uid://byxtdq2gkxl03" path="res://objects/select_screen/select_canvas.gd" id="16_2cqfq"]
 [ext_resource type="Script" uid="uid://6dbbnn0gj4kh" path="res://objects/select_screen/pack_selector.gd" id="17_074og"]
 [ext_resource type="Resource" uid="uid://drdkkvptx3wtw" path="res://assets/component_pack_list.res" id="18_074og"]
@@ -55,6 +56,12 @@ metadata/_custom_type_script = "uid://ckbxto3f132l4"
 [sub_resource type="Resource" id="Resource_ryguw"]
 script = ExtResource("5_272bh")
 comp = ExtResource("12_getpj")
+amount = 1
+metadata/_custom_type_script = "uid://ckbxto3f132l4"
+
+[sub_resource type="Resource" id="Resource_d13ii"]
+script = ExtResource("5_272bh")
+comp = ExtResource("13_ryguw")
 amount = 1
 metadata/_custom_type_script = "uid://ckbxto3f132l4"
 
@@ -150,6 +157,15 @@ text = "option1
 "
 script = ExtResource("1_0xm2m")
 res = SubResource("Resource_ryguw")
+mouse = NodePath("../../../Mouse")
+metadata/_custom_type_script = "uid://g0gktq42cgrq"
+
+[node name="Button7" type="Button" parent="InGameUI/VBoxContainer" node_paths=PackedStringArray("mouse")]
+layout_mode = 2
+text = "option1
+"
+script = ExtResource("1_0xm2m")
+res = SubResource("Resource_d13ii")
 mouse = NodePath("../../../Mouse")
 metadata/_custom_type_script = "uid://g0gktq42cgrq"
 
