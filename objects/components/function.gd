@@ -5,6 +5,7 @@ class_name Component
 
 @export_multiline var on_turn_end_desc : String
 @export_multiline var on_trigger_desc : String
+@export_multiline var on_switch_desc : String
 
 @export var max_connections : int
 @export var sprite : Texture2D
@@ -35,4 +36,9 @@ func _to_string() -> String:
 		res += "On trigger:\n"+ on_trigger_desc + "\n\n"
 	if on_turn_end_desc != "":
 		res += "On turn end:\n"+ on_turn_end_desc + "\n\n"
+	if on_switch_desc != "":
+		res += "Switching: \n"+ on_switch_desc + "\n\n"
+	
+	res += "Max connections:\n" + str(max_connections) + "\n\n"
+
 	return res

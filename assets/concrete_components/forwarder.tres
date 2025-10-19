@@ -7,6 +7,7 @@
 script = ExtResource("1_2sach")
 Name = "Forwarder"
 on_trigger_desc = "Send signal into direction arrow looks"
+on_switch_desc = "Change direction"
 max_connections = 2
 sprite = ExtResource("2_cu0nh")
 metadata/_custom_type_script = "uid://c252ucgsfdt4q"

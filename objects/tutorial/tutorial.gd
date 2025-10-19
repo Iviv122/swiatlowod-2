@@ -1,8 +1,7 @@
 extends Panel
 class_name Tutorial
 
-@export var images: Array[Texture2D]
-@export_multiline var description: Array[String]
+@export var slides : Array[TutorialSlide]
 
 func exit():
 	queue_free()
@@ -14,7 +13,7 @@ func load_next():
 	for c in get_children():
 		c.queue_free()
 
-	if i == images.size():
+	if i == slides.size():
 		exit()
 		return
 
@@ -25,13 +24,13 @@ func load_next():
 	vBoxContainer.alignment = BoxContainer.ALIGNMENT_CENTER
 
 	var texture_rect = TextureRect.new()
-	texture_rect.texture = images[i]
+	texture_rect.texture = slides[i].image
 	texture_rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	texture_rect.custom_minimum_size = Vector2(images[i].get_width(), images[i].get_height())
+	texture_rect.custom_minimum_size = Vector2(slides[i].image.get_width(), slides[i].image.get_height())
 	vBoxContainer.add_child(texture_rect)
 
 	var text = Label.new()
-	text.text = description[i]
+	text.text = slides[i].description
 	text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	text.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	vBoxContainer.add_child(text)
