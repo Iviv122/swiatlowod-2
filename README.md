@@ -1,1 +1,51 @@
 # Game where you build network and trying to meet the quota
+
+
+
+
+Was made with Godot 4.5 (stable)
+
+Made for Hack Club Siege week 7, topic signal
+
+Took too big scale for such game and it came out out as it is 
+
+Balance is weak point, game is too easy. It doesn't feel entertaining to break it
+
+# What the game about?
+
+Game is about connecting nodes (components) and trying to maximize your cash production.
+
+All nodes have triggers as well as additional properies.
+
+Also all nodes are limited in their connections
+
+You can trigger node as example via:
+
+- Sending signal 
+- Ending turn
+- Direct activation from some nodes
+
+In order to progress you need to satisfy you current money needs
+
+After every turn quota will increase and you will given option to select one of two packs of components 
+
+# Game controlls
+
+- Left mouse to place / start connecting components
+- WASD , arrow keys, middle button to move camera
+- scroll mouse wheel , +/- to zoom in/out
+- Shift to increase camera speed
+
+# Perfomance concerns
+
+Your build can be so powerfull, that your game will crush under weight of cash and signals.
+
+You should be carefull about what are you doing.
+
+# Example gameplay video
+
+
+
+# P.S for reviewer
+
+I am not sure if interpreted theme correctly, but i though that signal is signal, it is same for ethernet, wireless and etc. All of theme boils down to single or multiple network grids where everyone interacts with each other via signals. It doesn't matter what signal is while it is sending some kind of information (information when you need to trigger in case of this game). 
