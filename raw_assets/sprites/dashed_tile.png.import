@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b13qt4pyb5x8b"
-path="res://.godot/imported/repeator.png-7e9bb64a1d0d929d460930ff7b3885c1.ctex"
+uid="uid://ryomm0grwrvk"
+path="res://.godot/imported/dashed_tile.png-0c2775e4fbcf0d8bfecb271444317003.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://raw_assets/repeator.png"
-dest_files=["res://.godot/imported/repeator.png-7e9bb64a1d0d929d460930ff7b3885c1.ctex"]
+source_file="res://raw_assets/sprites/dashed_tile.png"
+dest_files=["res://.godot/imported/dashed_tile.png-0c2775e4fbcf0d8bfecb271444317003.ctex"]
 
 [params]
 

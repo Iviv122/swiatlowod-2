@@ -4,6 +4,7 @@ class_name ComponentInstance
 @export var component: Component
 @export var sprite: Sprite2D
 @export var selection_circle: SelectionCircle
+@export var trigger_sound : AudioStream
 
 var triggeted_pop_text : PersistentPopText 
 
@@ -44,30 +45,24 @@ func on_turn_end() -> void:
 
 var t : Tween
 func trigger() -> void:
-	if t:
-		t.kill()
-	t = create_tween()
-	
-	t.tween_property(self,"scale",Vector2(1.2,1.2),0.1).set_trans(Tween.TRANS_SPRING)
-	t.tween_property(self,"scale",Vector2(1,1),0.1).set_delay(0.05).set_trans(Tween.TRANS_SPRING)
-
-	triggeted_pop_text.shoot()
-
+	trigger_sfx()
 	component.trigger(neighbours,self,self)
 
 func switch() -> void:
 	component.switch(neighbours,self)
 
-func trigger_outside(signal_owner : ComponentInstance):
+func trigger_sfx() -> void:
 	if t:
 		t.kill()
 	t = create_tween()
-	
 	t.tween_property(self,"scale",Vector2(1.2,1.2),0.1).set_trans(Tween.TRANS_SPRING)
 	t.tween_property(self,"scale",Vector2(1,1),0.1).set_delay(0.05).set_trans(Tween.TRANS_SPRING)
-
+	AudioPlayerInstance.play(trigger_sound)
 	triggeted_pop_text.shoot()
 
+func trigger_outside(signal_owner : ComponentInstance):
+	trigger_sfx()	
+	
 	component.trigger(neighbours,self,signal_owner)
 
 func send_pulse(i : int) -> void:

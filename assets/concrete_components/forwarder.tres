@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Forwarder" load_steps=3 format=3 uid="uid://crnk2ck3ivgu6"]
 
 [ext_resource type="Script" uid="uid://c252ucgsfdt4q" path="res://objects/components_concrete/forwarder.gd" id="1_2sach"]
-[ext_resource type="Texture2D" uid="uid://cou8f4ymepi1o" path="res://raw_assets/forwarder.png" id="2_cu0nh"]
+[ext_resource type="Texture2D" uid="uid://cou8f4ymepi1o" path="res://raw_assets/sprites/forwarder.png" id="2_cu0nh"]
 
 [resource]
 script = ExtResource("1_2sach")

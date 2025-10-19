@@ -1,19 +1,22 @@
-[gd_scene load_steps=32 format=4 uid="uid://c2swm0qftsr7y"]
+[gd_scene load_steps=36 format=4 uid="uid://c2swm0qftsr7y"]
 
 [ext_resource type="Script" uid="uid://g0gktq42cgrq" path="res://objects/ui/function_select.gd" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://cjqnn4475ilyy" path="res://objects/in_field_ui/mouse.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://c0uoji56xna3x" path="res://prefabs/component.tscn" id="2_1bvp3"]
+[ext_resource type="AudioStream" uid="uid://bbuhf4vwhbldg" path="res://raw_assets/sounds/connect_sound.wav" id="3_0odxb"]
+[ext_resource type="AudioStream" uid="uid://wbxpjjyj08u0" path="res://raw_assets/sounds/place_sound.wav" id="3_1u8w0"]
 [ext_resource type="Script" uid="uid://dfxhw5uslaflr" path="res://objects/ui/option_display.gd" id="3_efxa6"]
 [ext_resource type="Script" uid="uid://bpaa3lqv2t865" path="res://objects/progression/points.gd" id="3_w48qg"]
 [ext_resource type="Script" path="res://objects/components/component_stash.gd" id="5_272bh"]
 [ext_resource type="Script" uid="uid://coyx87dugdujn" path="res://objects/camera/camera_return_to_origin.gd" id="5_lquwl"]
+[ext_resource type="AudioStream" uid="uid://diorykgnm4vvg" path="res://raw_assets/sounds/cant_sound.wav" id="5_lswn8"]
 [ext_resource type="Resource" uid="uid://dnthphocbrclx" path="res://assets/concrete_components/factory.tres" id="5_ycdy4"]
 [ext_resource type="Script" uid="uid://dumw5oi7t7v2" path="res://objects/camera/camera_move.gd" id="6_7mycd"]
 [ext_resource type="Script" uid="uid://dxa4nu2h52p32" path="res://objects/progression/end_turn.gd" id="7_4c57u"]
 [ext_resource type="Resource" uid="uid://bhhj6xciig2mk" path="res://assets/concrete_components/entry_point.res" id="7_dg77c"]
 [ext_resource type="PackedScene" uid="uid://de864lepfoan0" path="res://prefabs/tutorial.tscn" id="8_5vw27"]
 [ext_resource type="Resource" uid="uid://dxmht4utnnhpx" path="res://assets/concrete_components/repeater.tres" id="8_ycdy4"]
-[ext_resource type="Texture2D" uid="uid://ryomm0grwrvk" path="res://raw_assets/dashed_tile.png" id="9_kek77"]
+[ext_resource type="Texture2D" uid="uid://ryomm0grwrvk" path="res://raw_assets/sprites/dashed_tile.png" id="9_kek77"]
 [ext_resource type="Resource" uid="uid://crnk2ck3ivgu6" path="res://assets/concrete_components/forwarder.tres" id="10_cegan"]
 [ext_resource type="Resource" uid="uid://lcw6k8ta0ybm" path="res://assets/concrete_components/router.tres" id="11_82xsv"]
 [ext_resource type="Resource" uid="uid://dt7uiahtfr5qj" path="res://assets/concrete_components/dns.tres" id="12_getpj"]
@@ -21,6 +24,7 @@
 [ext_resource type="Resource" uid="uid://d4d0c5x6gm8n2" path="res://assets/concrete_components/accamulator.tres" id="13_ryguw"]
 [ext_resource type="Script" uid="uid://byxtdq2gkxl03" path="res://objects/select_screen/select_canvas.gd" id="16_2cqfq"]
 [ext_resource type="Script" uid="uid://6dbbnn0gj4kh" path="res://objects/select_screen/pack_selector.gd" id="17_074og"]
+[ext_resource type="AudioStream" uid="uid://bar1yfh1wpfku" path="res://raw_assets/sounds/timer_tick.wav" id="17_d13ii"]
 [ext_resource type="Resource" uid="uid://drdkkvptx3wtw" path="res://assets/component_pack_list.res" id="18_074og"]
 
 [sub_resource type="Resource" id="Resource_5vw27"]
@@ -82,6 +86,9 @@ z_index = 1
 script = ExtResource("1_h2yge")
 component_prefab = ExtResource("2_1bvp3")
 check_radius = 5.0
+connect_sound = ExtResource("3_0odxb")
+place_sound = ExtResource("3_1u8w0")
+cant_sound = ExtResource("5_lswn8")
 metadata/_custom_type_script = "uid://cjqnn4475ilyy"
 
 [node name="InGameUI" type="CanvasLayer" parent="."]
@@ -205,6 +212,7 @@ offset_right = 20.0
 offset_bottom = 16.0
 grow_horizontal = 2
 script = ExtResource("12_vivmo")
+tick_sound = ExtResource("17_d13ii")
 metadata/_custom_type_script = "uid://b3tqh0p6dvmqm"
 
 [node name="CameraMove" type="Camera2D" parent="."]

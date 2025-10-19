@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6co8l6jva4y2"]
+
+[ext_resource type="Script" uid="uid://cdkhi8t58mi4e" path="res://objects/audio_player.gd" id="1_788x5"]
+
+[node name="AudioPlayerInstance" type="Node2D"]
+script = ExtResource("1_788x5")
+metadata/_custom_type_script = "uid://cdkhi8t58mi4e"

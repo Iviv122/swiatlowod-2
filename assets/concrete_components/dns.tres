@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="DNS" load_steps=3 format=3 uid="uid://dt7uiahtfr5qj"]
 
 [ext_resource type="Script" uid="uid://bq271cyk1ltdt" path="res://objects/components_concrete/dns.gd" id="1_5ggql"]
-[ext_resource type="Texture2D" uid="uid://bw1hj01tkdm76" path="res://raw_assets/dns.png" id="2_r038x"]
+[ext_resource type="Texture2D" uid="uid://bw1hj01tkdm76" path="res://raw_assets/sprites/dns.png" id="2_r038x"]
 
 [resource]
 script = ExtResource("1_5ggql")

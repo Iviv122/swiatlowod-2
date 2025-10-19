@@ -4,7 +4,7 @@ class_name PulseSignal
 var signal_owner : ComponentInstance
 var t : Tween
 
-var signal_texture : Texture2D = preload("res://raw_assets/connection_pulse.png")
+var signal_texture : Texture2D = preload("res://raw_assets/sprites/connection_pulse.png")
 
 func _ready():
 

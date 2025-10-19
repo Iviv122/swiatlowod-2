@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Repeater" load_steps=3 format=3 uid="uid://dxmht4utnnhpx"]
 
 [ext_resource type="Script" uid="uid://dmr3lmasdr0aj" path="res://objects/components_concrete/repeater.gd" id="1_ogrxd"]
-[ext_resource type="Texture2D" uid="uid://b13qt4pyb5x8b" path="res://raw_assets/repeator.png" id="2_4uj4n"]
+[ext_resource type="Texture2D" uid="uid://b13qt4pyb5x8b" path="res://raw_assets/sprites/repeator.png" id="2_4uj4n"]
 
 [resource]
 script = ExtResource("1_ogrxd")

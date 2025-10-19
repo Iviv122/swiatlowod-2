@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpmjhkj5c15ve"
-path="res://.godot/imported/entry_point.png-d340384ad9eee297cbba6e332f4c79fa.ctex"
+uid="uid://bg5rljy685wyr"
+path="res://.godot/imported/factory.png-23d1e44a68195f5ff3ea308a4ff4a47d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://raw_assets/entry_point.png"
-dest_files=["res://.godot/imported/entry_point.png-d340384ad9eee297cbba6e332f4c79fa.ctex"]
+source_file="res://raw_assets/sprites/factory.png"
+dest_files=["res://.godot/imported/factory.png-23d1e44a68195f5ff3ea308a4ff4a47d.ctex"]
 
 [params]
 

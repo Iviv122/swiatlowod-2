@@ -9,6 +9,11 @@ var is_colliding : bool
 @export var check_radius : float = 0.1 
 @export var placing_check_radius : float = 90 
 
+
+@export var connect_sound : AudioStream
+@export var place_sound : AudioStream
+@export var cant_sound : AudioStream
+
 var current_state : MouseState = MouseState.Idle
 
 var result
@@ -75,6 +80,7 @@ func place() ->void:
 	
 	m.set_component(current_component.comp)
 	m.global_position = global_position
+	AudioPlayerInstance.play(place_sound)
 
 	current_component.pull()
 
@@ -90,11 +96,14 @@ func start_wire():
 				if result[0].collider.have_space(): 
 					current_wire.set_end(result[0].collider)
 					current_wire = null
+					AudioPlayerInstance.play(connect_sound)
 				else:
 					PopTextCreatorInstance.pop_text(result[0].collider.global_position,"no connection slots",Color.RED)
 					current_wire.give_error()
+					AudioPlayerInstance.play(cant_sound)
 			else:
 				PopTextCreatorInstance.pop_text(result[0].collider.global_position,"already connected",Color.RED)
+				AudioPlayerInstance.play(cant_sound)
 				current_wire.give_error()
 	else:
 		if !current_wire:
@@ -108,6 +117,7 @@ func start_wire():
 				get_tree().root.add_child(current_wire)
 			else:
 				PopTextCreatorInstance.pop_text(result[0].collider.global_position,"no connection slots",Color.RED)
+				AudioPlayerInstance.play(cant_sound)
 
 func stop_wiring():
 	if current_wire:
@@ -132,6 +142,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			pass
 		else:
 			PopTextCreatorInstance.pop_text(get_global_mouse_position(),"no space",Color.RED)
+			AudioPlayerInstance.play(cant_sound)
 		move(get_global_mouse_position())
 	if event.is_action_pressed("cancel"):
 		if current_state == MouseState.Wiring:

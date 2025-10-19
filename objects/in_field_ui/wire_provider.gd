@@ -9,7 +9,7 @@ var finish: ComponentInstance
 var tween: Tween
 
 func _ready():
-	texture = load("res://raw_assets/dashedline.png")
+	texture = load("res://raw_assets/sprites/dashedline.png")
 	texture_mode = Line2D.LINE_TEXTURE_TILE
 
 

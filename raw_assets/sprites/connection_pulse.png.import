@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://caqs2866ax2in"
-path="res://.godot/imported/accamulator.png-e3b00bca0b836ec6502ab80546f6ca9e.ctex"
+uid="uid://2hjloefud88"
+path="res://.godot/imported/connection_pulse.png-8ee99218d56de26aced61d9208cf9d7c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://raw_assets/accamulator.png"
-dest_files=["res://.godot/imported/accamulator.png-e3b00bca0b836ec6502ab80546f6ca9e.ctex"]
+source_file="res://raw_assets/sprites/connection_pulse.png"
+dest_files=["res://.godot/imported/connection_pulse.png-8ee99218d56de26aced61d9208cf9d7c.ctex"]
 
 [params]
 

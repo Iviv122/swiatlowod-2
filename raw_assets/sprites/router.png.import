@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmrhgdu8tqip5"
-path="res://.godot/imported/connectivity.png-d36d3fe25b20d5c60b64b9a06e2138f3.ctex"
+uid="uid://d2vrk4mubr0fc"
+path="res://.godot/imported/router.png-23faff4721e1a996099068766697d907.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://raw_assets/connectivity.png"
-dest_files=["res://.godot/imported/connectivity.png-d36d3fe25b20d5c60b64b9a06e2138f3.ctex"]
+source_file="res://raw_assets/sprites/router.png"
+dest_files=["res://.godot/imported/router.png-23faff4721e1a996099068766697d907.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Factory" load_steps=3 format=3 uid="uid://dnthphocbrclx"]
 
 [ext_resource type="Script" uid="uid://ckuewexy0fnce" path="res://objects/components_concrete/factory.gd" id="1_jeu25"]
-[ext_resource type="Texture2D" uid="uid://bg5rljy685wyr" path="res://raw_assets/factory.png" id="2_1ny0p"]
+[ext_resource type="Texture2D" uid="uid://bg5rljy685wyr" path="res://raw_assets/sprites/factory.png" id="2_1ny0p"]
 
 [resource]
 script = ExtResource("1_jeu25")

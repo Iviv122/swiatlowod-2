@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bg5rljy685wyr"
-path="res://.godot/imported/factory.png-e7460267123eb5dabaef8e325af4ed51.ctex"
+uid="uid://b13qt4pyb5x8b"
+path="res://.godot/imported/repeator.png-47be621fe0ecc56d60c4a5ec13b9e842.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://raw_assets/factory.png"
-dest_files=["res://.godot/imported/factory.png-e7460267123eb5dabaef8e325af4ed51.ctex"]
+source_file="res://raw_assets/sprites/repeator.png"
+dest_files=["res://.godot/imported/repeator.png-47be621fe0ecc56d60c4a5ec13b9e842.ctex"]
 
 [params]
 

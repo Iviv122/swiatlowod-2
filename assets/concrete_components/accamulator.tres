@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Accamulator" load_steps=3 format=3 uid="uid://d4d0c5x6gm8n2"]
 
 [ext_resource type="Script" uid="uid://drab8or3yl0pl" path="res://objects/components_concrete/accamulator.gd" id="1_dt837"]
-[ext_resource type="Texture2D" uid="uid://caqs2866ax2in" path="res://raw_assets/accamulator.png" id="2_sjtdl"]
+[ext_resource type="Texture2D" uid="uid://caqs2866ax2in" path="res://raw_assets/sprites/accamulator.png" id="2_sjtdl"]
 
 [resource]
 script = ExtResource("1_dt837")

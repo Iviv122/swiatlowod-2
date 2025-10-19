@@ -5,7 +5,7 @@ var score : Points
 var value : int
 
 
-const money_texture = preload("res://raw_assets/money_particle.png")
+const money_texture = preload("res://raw_assets/sprites/money_particle.png")
 
 func _ready():
 	var t = create_tween()

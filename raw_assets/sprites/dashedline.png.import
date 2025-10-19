@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ryomm0grwrvk"
-path="res://.godot/imported/dashed_tile.png-2a8127b40f8225db81b23a8503458d21.ctex"
+uid="uid://c4ocykc0xc0o3"
+path="res://.godot/imported/dashedline.png-3096333dc0372b0105140a1c62971d45.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://raw_assets/dashed_tile.png"
-dest_files=["res://.godot/imported/dashed_tile.png-2a8127b40f8225db81b23a8503458d21.ctex"]
+source_file="res://raw_assets/sprites/dashedline.png"
+dest_files=["res://.godot/imported/dashedline.png-3096333dc0372b0105140a1c62971d45.ctex"]
 
 [params]
 

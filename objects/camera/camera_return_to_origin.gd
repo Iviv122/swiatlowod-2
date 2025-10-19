@@ -9,4 +9,5 @@ func _pressed() -> void:
 		tween.kill()
 
 	tween = create_tween()
+	tooltip_text = "Return to map center"
 	tween.tween_property(cam,"global_position",Vector2(0,0),0.3).set_trans(Tween.TRANS_SINE)
