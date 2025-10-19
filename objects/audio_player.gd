@@ -1,26 +1,42 @@
 extends Node2D
 class_name AudioPlayer
 
-var num_players = 16
-var bus = "master"
+var urgent_players = 2
+var num_players = 8
+
+var max_sound_in_queue = 20
 
 var available = []
 var queue = []
 
-var max_sound_in_queue = 40
+var urgent_available = []
+var urgent_queue = []
+
+
 
 func _ready():
+	for i in urgent_players:
+		var p = AudioStreamPlayer2D.new()
+		add_child(p)
+		urgent_available.append(p)
+		p.finished.connect( func() : _on_urgent_stream_finished(p))
+
 	for i in num_players:
 		var p = AudioStreamPlayer2D.new()
 		add_child(p)
 		available.append(p)
 		p.finished.connect( func() : _on_stream_finished(p))
-		p.bus = bus
+
+
+func _on_urgent_stream_finished(stream):
+	urgent_available.append(stream)
 
 
 func _on_stream_finished(stream):
 	available.append(stream)
 
+func urgent_play(sound_path):
+	urgent_queue.append(sound_path)
 
 func play(sound_path):
 	if queue.size() <= max_sound_in_queue:
@@ -28,6 +44,11 @@ func play(sound_path):
 
 
 func _process(delta):
+	if not urgent_queue.is_empty() and not urgent_queue.is_empty():
+		urgent_available[0].stream = queue.pop_front()
+		urgent_available[0].play()
+		urgent_available.pop_front()
+
 	if not queue.is_empty() and not available.is_empty():
 		available[0].stream = queue.pop_front()
 		available[0].play()

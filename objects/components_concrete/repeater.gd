@@ -11,7 +11,7 @@ func send(_neighbours : Array[ComponentInstance], s :ComponentInstance,_signal_o
 func trigger(_neighbour : Array[ComponentInstance],s : ComponentInstance,signal_owner : ComponentInstance) -> void:
 
 	if signal_owner.component is Repeater:
-		if randf() > 0.5:
+		if randf() > 0.75:
 			send(_neighbour,s,signal_owner)
 	else:
 		send(_neighbour,s,signal_owner)

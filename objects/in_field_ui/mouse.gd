@@ -20,6 +20,9 @@ var result
 
 var current_wire : WireProvider 
 
+func play_cant():
+	AudioPlayerInstance.play(cant_sound)
+
 func _ready():
 	current_state = MouseState.Idle
 	move(global_position)
@@ -100,10 +103,10 @@ func start_wire():
 				else:
 					PopTextCreatorInstance.pop_text(result[0].collider.global_position,"no connection slots",Color.RED)
 					current_wire.give_error()
-					AudioPlayerInstance.play(cant_sound)
+					play_cant()
 			else:
 				PopTextCreatorInstance.pop_text(result[0].collider.global_position,"already connected",Color.RED)
-				AudioPlayerInstance.play(cant_sound)
+				play_cant()
 				current_wire.give_error()
 	else:
 		if !current_wire:
@@ -117,7 +120,7 @@ func start_wire():
 				get_tree().root.add_child(current_wire)
 			else:
 				PopTextCreatorInstance.pop_text(result[0].collider.global_position,"no connection slots",Color.RED)
-				AudioPlayerInstance.play(cant_sound)
+				play_cant()
 
 func stop_wiring():
 	if current_wire:
@@ -142,7 +145,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			pass
 		else:
 			PopTextCreatorInstance.pop_text(get_global_mouse_position(),"no space",Color.RED)
-			AudioPlayerInstance.play(cant_sound)
+			play_cant()
 		move(get_global_mouse_position())
 	if event.is_action_pressed("cancel"):
 		if current_state == MouseState.Wiring:

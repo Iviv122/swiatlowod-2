@@ -7,7 +7,11 @@ var value : int
 
 const money_texture = preload("res://raw_assets/sprites/money_particle.png")
 
+func on_turn_start():
+	queue_free()
+
 func _ready():
+	add_to_group("on_turn_start")
 	var t = create_tween()
 	texture = money_texture
 	var trans = get_canvas_transform().affine_inverse().get_origin() + score.position
