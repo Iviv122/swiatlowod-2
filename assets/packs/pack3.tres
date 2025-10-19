@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="ComponentPack" load_steps=9 format=3 uid="uid://cfrcppf8uqk8k"]
+
+[ext_resource type="Script" path="res://objects/components/component_stash.gd" id="1_nbua2"]
+[ext_resource type="Resource" uid="uid://crnk2ck3ivgu6" path="res://assets/concrete_components/forwarder.tres" id="2_sj32f"]
+[ext_resource type="Resource" uid="uid://dxmht4utnnhpx" path="res://assets/concrete_components/repeater.tres" id="3_8vumg"]
+[ext_resource type="Resource" uid="uid://lcw6k8ta0ybm" path="res://assets/concrete_components/router.tres" id="4_qt6wj"]
+[ext_resource type="Script" uid="uid://dvai7sil2ukcl" path="res://objects/select_screen/component_pack.gd" id="5_un8n1"]
+
+[sub_resource type="Resource" id="Resource_1cy50"]
+script = ExtResource("1_nbua2")
+comp = ExtResource("2_sj32f")
+amount = 3
+metadata/_custom_type_script = "uid://ckbxto3f132l4"
+
+[sub_resource type="Resource" id="Resource_aeucw"]
+script = ExtResource("1_nbua2")
+comp = ExtResource("3_8vumg")
+amount = 1
+metadata/_custom_type_script = "uid://ckbxto3f132l4"
+
+[sub_resource type="Resource" id="Resource_lb8mo"]
+script = ExtResource("1_nbua2")
+comp = ExtResource("4_qt6wj")
+amount = 1
+metadata/_custom_type_script = "uid://ckbxto3f132l4"
+
+[resource]
+script = ExtResource("5_un8n1")
+components = Array[ExtResource("1_nbua2")]([SubResource("Resource_1cy50"), SubResource("Resource_aeucw"), SubResource("Resource_lb8mo")])
+metadata/_custom_type_script = "uid://dvai7sil2ukcl"

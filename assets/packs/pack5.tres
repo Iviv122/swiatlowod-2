@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="ComponentPack" load_steps=11 format=3 uid="uid://rrjexi3lxkvi"]
+
+[ext_resource type="Script" path="res://objects/components/component_stash.gd" id="1_rik2q"]
+[ext_resource type="Resource" uid="uid://dxmht4utnnhpx" path="res://assets/concrete_components/repeater.tres" id="2_648d4"]
+[ext_resource type="Script" uid="uid://dvai7sil2ukcl" path="res://objects/select_screen/component_pack.gd" id="2_cshbr"]
+[ext_resource type="Resource" uid="uid://lcw6k8ta0ybm" path="res://assets/concrete_components/router.tres" id="3_4j2uu"]
+[ext_resource type="Resource" uid="uid://bhhj6xciig2mk" path="res://assets/concrete_components/entry_point.res" id="4_dovi4"]
+[ext_resource type="Resource" uid="uid://d4d0c5x6gm8n2" path="res://assets/concrete_components/accamulator.tres" id="5_nwqy2"]
+
+[sub_resource type="Resource" id="Resource_rduap"]
+script = ExtResource("1_rik2q")
+comp = ExtResource("2_648d4")
+amount = 1
+metadata/_custom_type_script = "uid://ckbxto3f132l4"
+
+[sub_resource type="Resource" id="Resource_bmqtm"]
+script = ExtResource("1_rik2q")
+comp = ExtResource("3_4j2uu")
+amount = 1
+metadata/_custom_type_script = "uid://ckbxto3f132l4"
+
+[sub_resource type="Resource" id="Resource_teirn"]
+script = ExtResource("1_rik2q")
+comp = ExtResource("4_dovi4")
+amount = 1
+metadata/_custom_type_script = "uid://ckbxto3f132l4"
+
+[sub_resource type="Resource" id="Resource_ya55d"]
+script = ExtResource("1_rik2q")
+comp = ExtResource("5_nwqy2")
+amount = 1
+metadata/_custom_type_script = "uid://ckbxto3f132l4"
+
+[resource]
+script = ExtResource("2_cshbr")
+components = Array[ExtResource("1_rik2q")]([SubResource("Resource_rduap"), SubResource("Resource_bmqtm"), SubResource("Resource_teirn"), SubResource("Resource_ya55d")])
+metadata/_custom_type_script = "uid://dvai7sil2ukcl"

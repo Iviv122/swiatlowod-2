@@ -23,4 +23,4 @@ func on_turn_end():
 
 	await get_tree().process_frame
 	turn+=1
-	points_label.set_requirement(turn*10)
+	points_label.set_requirement((turn*10)*(1+turn*0.1))

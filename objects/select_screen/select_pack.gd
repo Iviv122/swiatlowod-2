@@ -7,7 +7,7 @@ var option_display : OptionDisplay
 func set_pack(pack : ComponentPack) -> void:
 	my_pack = pack
 	for i in my_pack.components:
-		text += i.comp.Name + "\n"
+		text += str(i.amount) + " " + i.comp.Name + "\n"
 
 	tooltip_text = my_pack.to_string()
 

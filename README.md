@@ -1,1 +1,1 @@
-# Game where you need to build grid and meet satisfaction quota 
+# Game where you build network and trying to meet the quota
