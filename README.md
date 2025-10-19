@@ -1,7 +1,6 @@
 # Game where you build network and trying to meet the quota
 
-
-
+Demo https://iviv122.itch.io/swiatlowod
 
 Was made with Godot 4.5 (stable)
 
