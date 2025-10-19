@@ -103,80 +103,87 @@ text = "50/50"
 script = ExtResource("3_w48qg")
 metadata/_custom_type_script = "uid://bpaa3lqv2t865"
 
-[node name="VBoxContainer" type="HBoxContainer" parent="InGameUI" node_paths=PackedStringArray("mouse")]
+[node name="ScrollContainer" type="ScrollContainer" parent="InGameUI"]
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -31.0
 grow_horizontal = 2
 grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+vertical_scroll_mode = 0
+
+[node name="VBoxContainer" type="HBoxContainer" parent="InGameUI/ScrollContainer" node_paths=PackedStringArray("mouse")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 alignment = 1
 script = ExtResource("3_efxa6")
-mouse = NodePath("../../Mouse")
+mouse = NodePath("../../../Mouse")
 metadata/_custom_type_script = "uid://dfxhw5uslaflr"
 
-[node name="Button" type="Button" parent="InGameUI/VBoxContainer" node_paths=PackedStringArray("mouse")]
+[node name="Button" type="Button" parent="InGameUI/ScrollContainer/VBoxContainer" node_paths=PackedStringArray("mouse")]
 layout_mode = 2
 text = "option1
 "
 script = ExtResource("1_0xm2m")
 res = SubResource("Resource_5vw27")
-mouse = NodePath("../../../Mouse")
+mouse = NodePath("../../../../Mouse")
 metadata/_custom_type_script = "uid://g0gktq42cgrq"
 
-[node name="Button2" type="Button" parent="InGameUI/VBoxContainer" node_paths=PackedStringArray("mouse")]
+[node name="Button2" type="Button" parent="InGameUI/ScrollContainer/VBoxContainer" node_paths=PackedStringArray("mouse")]
 layout_mode = 2
 text = "option1
 "
 script = ExtResource("1_0xm2m")
 res = SubResource("Resource_ycdy4")
-mouse = NodePath("../../../Mouse")
+mouse = NodePath("../../../../Mouse")
 metadata/_custom_type_script = "uid://g0gktq42cgrq"
 
-[node name="Button3" type="Button" parent="InGameUI/VBoxContainer" node_paths=PackedStringArray("mouse")]
+[node name="Button3" type="Button" parent="InGameUI/ScrollContainer/VBoxContainer" node_paths=PackedStringArray("mouse")]
 layout_mode = 2
 text = "option1
 "
 script = ExtResource("1_0xm2m")
 res = SubResource("Resource_w48qg")
-mouse = NodePath("../../../Mouse")
+mouse = NodePath("../../../../Mouse")
 metadata/_custom_type_script = "uid://g0gktq42cgrq"
 
-[node name="Button4" type="Button" parent="InGameUI/VBoxContainer" node_paths=PackedStringArray("mouse")]
+[node name="Button4" type="Button" parent="InGameUI/ScrollContainer/VBoxContainer" node_paths=PackedStringArray("mouse")]
 layout_mode = 2
 text = "option1
 "
 script = ExtResource("1_0xm2m")
 res = SubResource("Resource_getpj")
-mouse = NodePath("../../../Mouse")
+mouse = NodePath("../../../../Mouse")
 metadata/_custom_type_script = "uid://g0gktq42cgrq"
 
-[node name="Button5" type="Button" parent="InGameUI/VBoxContainer" node_paths=PackedStringArray("mouse")]
+[node name="Button5" type="Button" parent="InGameUI/ScrollContainer/VBoxContainer" node_paths=PackedStringArray("mouse")]
 layout_mode = 2
 text = "option1
 "
 script = ExtResource("1_0xm2m")
 res = SubResource("Resource_82xsv")
-mouse = NodePath("../../../Mouse")
+mouse = NodePath("../../../../Mouse")
 metadata/_custom_type_script = "uid://g0gktq42cgrq"
 
-[node name="Button6" type="Button" parent="InGameUI/VBoxContainer" node_paths=PackedStringArray("mouse")]
+[node name="Button6" type="Button" parent="InGameUI/ScrollContainer/VBoxContainer" node_paths=PackedStringArray("mouse")]
 layout_mode = 2
 text = "option1
 "
 script = ExtResource("1_0xm2m")
 res = SubResource("Resource_ryguw")
-mouse = NodePath("../../../Mouse")
+mouse = NodePath("../../../../Mouse")
 metadata/_custom_type_script = "uid://g0gktq42cgrq"
 
-[node name="Button7" type="Button" parent="InGameUI/VBoxContainer" node_paths=PackedStringArray("mouse")]
+[node name="Button7" type="Button" parent="InGameUI/ScrollContainer/VBoxContainer" node_paths=PackedStringArray("mouse")]
 layout_mode = 2
 text = "option1
 "
 script = ExtResource("1_0xm2m")
 res = SubResource("Resource_d13ii")
-mouse = NodePath("../../../Mouse")
+mouse = NodePath("../../../../Mouse")
 metadata/_custom_type_script = "uid://g0gktq42cgrq"
 
 [node name="CameraReturnToOrigin" type="Button" parent="InGameUI" node_paths=PackedStringArray("cam")]
@@ -249,21 +256,33 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="SelectCanvas/Panel" node_paths=PackedStringArray("option_display")]
+[node name="VBoxContainer" type="VBoxContainer" parent="SelectCanvas/Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -138.0
-offset_top = -12.0
-offset_right = 138.0
-offset_bottom = 12.0
+offset_left = -136.0
+offset_top = -20.0
+offset_right = 136.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Label" type="Label" parent="SelectCanvas/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Select you reward"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SelectCanvas/Panel/VBoxContainer" node_paths=PackedStringArray("option_display")]
+layout_mode = 2
+theme_override_constants/separation = 15
 alignment = 1
 script = ExtResource("17_074og")
 pack_list = ExtResource("18_074og")
-option_display = NodePath("../../../InGameUI/VBoxContainer")
+option_display = NodePath("../../../../InGameUI/ScrollContainer/VBoxContainer")
 metadata/_custom_type_script = "uid://6dbbnn0gj4kh"
