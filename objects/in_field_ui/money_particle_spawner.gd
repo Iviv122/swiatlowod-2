@@ -8,7 +8,7 @@ func spawn(l : Points,p : Vector2, value : int):
 	par.global_position = p 
 	par.value =value
 	par.score = l
-	get_tree().root.add_child(par)
+	get_tree().current_scene.add_child(par)
 
 func spawn_particle(pos : Vector2,value : int) ->void:
 	requested.emit(pos,value)

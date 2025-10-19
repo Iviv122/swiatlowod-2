@@ -71,7 +71,6 @@ func send_pulse(i : int) -> void:
 func _ready() -> void:
 	text_above = ConnectionLabel.new()
 	text_above.setup(self)
-	text_above.global_position += global_position
 
 	add_to_group("on_turn_end")
 	add_to_group("on_turn_start")
@@ -86,8 +85,8 @@ func _ready() -> void:
 	triggeted_pop_text.label_settings = LabelSettings.new()
 	triggeted_pop_text.label_settings.font_color = Color.GREEN 
 
-	get_tree().root.add_child(triggeted_pop_text)
-	get_tree().root.add_child(text_above)
+	get_tree().current_scene.add_child(triggeted_pop_text)
+	add_child(text_above)
 
 func set_component(comp: Component):
 	component = comp.duplicate()

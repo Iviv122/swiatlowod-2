@@ -45,7 +45,7 @@ func set_end(comp: ComponentInstance):
 	else:
 		finish.network.unite(start)
 
-	get_tree().root.add_child(l)
+	get_tree().current_scene.add_child(l)
 	queue_free()
 
 func check_if_connected(another: ComponentInstance) -> bool:

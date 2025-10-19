@@ -20,6 +20,6 @@ func shoot() ->void:
 		tween.kill()
 	tween = create_tween()
 
-	tween.tween_property(self,"position",global_position+Vector2.UP*height,0.4).set_trans(Tween.TRANS_SPRING)
+	tween.tween_property(self,"position",position+Vector2.UP*height,0.4).set_trans(Tween.TRANS_SPRING)
 	await get_tree().create_timer(lifetime).timeout
 	hide()

@@ -13,6 +13,6 @@ func pop_text(pos: Vector2,text : String,color : Color = Color.WHITE,height : fl
 	l.text = text
 	l.label_settings = LabelSettings.new()
 	l.label_settings.font_color = color
-
+	l.visibility_layer = 99
 	
-	get_tree().root.add_child(l)
+	get_tree().current_scene.add_child(l)

@@ -90,7 +90,7 @@ func place() ->void:
 	if current_component.amount == 0:
 		clear()
 
-	get_tree().root.add_child(m)
+	get_tree().current_scene.add_child(m)
 
 func start_wire():
 	if current_wire:
@@ -117,7 +117,7 @@ func start_wire():
 				current_wire.global_position = result[0].collider.global_position 
 				current_wire.set_start(result[0].collider)
 				
-				get_tree().root.add_child(current_wire)
+				get_tree().current_scene.add_child(current_wire)
 			else:
 				PopTextCreatorInstance.pop_text(result[0].collider.global_position,"no connection slots",Color.RED)
 				play_cant()
