@@ -12,7 +12,12 @@ signal lost(turns : int)
 
 func _ready():
 	add_to_group("on_turn_end")
-	turn = 0
+	GameStateInstance.state_change.connect(reload)
+
+func reload(s : GameState.State) -> void:
+	if GameState.State.Tutorial == s: 
+		points_label.set_requirement(1)
+		turn = 0
 
 func on_turn_end():
 

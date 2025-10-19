@@ -3,6 +3,9 @@ class_name Tutorial
 
 @export var slides : Array[TutorialSlide]
 
+func _ready():
+	GameStateInstance.change_state(GameState.State.Tutorial)
+
 func exit():
 	queue_free()
 	GameStateInstance.change_state(GameState.State.Playing)

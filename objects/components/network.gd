@@ -6,6 +6,7 @@ var nodes : Array[ComponentInstance]
 
 func add(comp : ComponentInstance):
 	nodes.append(comp)
+	comp.network = self
 	size += 1
 
 func trigger_all() ->void:
