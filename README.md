@@ -41,6 +41,8 @@ Your build can be so powerfull, that your game will crush under weight of cash a
 
 You should be carefull about what are you doing.
 
+Also first try will be laggy. Idk how to fix and what causes it
+
 # Example gameplay video
 
 [![Youtube Video](https://github.com/Iviv122/swiatlowod-2/edit/master/README.md)](https://www.youtube.com/watch?v=TwdokJAE13M)
