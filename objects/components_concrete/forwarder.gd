@@ -31,10 +31,8 @@ func on_connect(_neighbour: ComponentInstance, s: ComponentInstance) -> void:
 func send(_neighbours: Array[ComponentInstance], s: ComponentInstance, _signal_owner: ComponentInstance):
 	if 1 == _neighbours.size():
 			s.send_pulse(0)
-			PopTextCreatorInstance.pop_text(s.global_position, "forwarded", Color.GREEN)
 	elif 1 < _neighbours.size():
 			s.send_pulse(target_dir)
-			PopTextCreatorInstance.pop_text(s.global_position, "forwarded", Color.GREEN)
 
 func trigger(_neighbour: Array[ComponentInstance], s: ComponentInstance, signal_owner: ComponentInstance) -> void:
 	send(_neighbour, s, signal_owner)

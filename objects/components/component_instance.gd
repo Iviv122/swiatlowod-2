@@ -5,6 +5,8 @@ class_name ComponentInstance
 @export var sprite: Sprite2D
 @export var selection_circle: SelectionCircle
 
+var triggeted_pop_text : PersistentPopText 
+
 var network : Network 
 
 var text_above: Label
@@ -49,6 +51,8 @@ func trigger() -> void:
 	t.tween_property(self,"scale",Vector2(1.2,1.2),0.1).set_trans(Tween.TRANS_SPRING)
 	t.tween_property(self,"scale",Vector2(1,1),0.1).set_delay(0.05).set_trans(Tween.TRANS_SPRING)
 
+	triggeted_pop_text.shoot()
+
 	component.trigger(neighbours,self,self)
 
 func switch() -> void:
@@ -58,9 +62,11 @@ func trigger_outside(signal_owner : ComponentInstance):
 	if t:
 		t.kill()
 	t = create_tween()
-		
+	
 	t.tween_property(self,"scale",Vector2(1.2,1.2),0.1).set_trans(Tween.TRANS_SPRING)
 	t.tween_property(self,"scale",Vector2(1,1),0.1).set_delay(0.05).set_trans(Tween.TRANS_SPRING)
+
+	triggeted_pop_text.shoot()
 
 	component.trigger(neighbours,self,signal_owner)
 
@@ -79,6 +85,13 @@ func _ready() -> void:
 		network = Network.new()
 		network.add(self)
 
+	triggeted_pop_text = PersistentPopText.new()
+	triggeted_pop_text.global_position = global_position
+	triggeted_pop_text.text = "triggered"
+	triggeted_pop_text.label_settings = LabelSettings.new()
+	triggeted_pop_text.label_settings.font_color = Color.GREEN 
+
+	get_tree().root.add_child(triggeted_pop_text)
 	get_tree().root.add_child(text_above)
 
 func set_component(comp: Component):

@@ -11,9 +11,6 @@ func trigger(_neighbours : Array[ComponentInstance],s : ComponentInstance,signal
 	if !was_triggered:
 		if _neighbours.size() >0:	
 			was_triggered = true
-			PopTextCreatorInstance.pop_text(s.global_position,"triggered",Color.GREEN)
 			var i = randi_range(0,_neighbours.size()-1)
 			s.send_pulse(i)
-	else: 
-		PopTextCreatorInstance.pop_text(s.global_position,"was used",Color.RED)
 	was_triggered = true
