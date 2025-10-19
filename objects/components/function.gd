@@ -12,19 +12,19 @@ class_name Component
 signal triggered()
 
 func on_place(s : ComponentInstance) -> void:
-    pass
+	pass
 func on_connect(_neighbour : ComponentInstance,s : ComponentInstance) -> void:
-    pass
+	pass
 func on_appear() -> void:
-    pass
+	pass
 func on_item_trigger() -> void:
-    pass
+	pass
 func on_turn_end(_neighbour : Array[ComponentInstance],s : ComponentInstance ) -> void:
-    pass
+	pass
 func trigger(_neighbour : Array[ComponentInstance],s : ComponentInstance,signal_owner : ComponentInstance) -> void:
-    pass
+	pass
 func on_turn_start(s : ComponentInstance) -> void:
-    pass
+	pass
 # change compoment on right click
 func switch(_neighbour : Array[ComponentInstance],s : ComponentInstance )-> void:
-    pass
+	pass

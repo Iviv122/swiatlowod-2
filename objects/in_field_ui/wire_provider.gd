@@ -40,6 +40,10 @@ func set_end(comp: ComponentInstance):
 	start.connect_neighbour(finish,l)
 	finish.connect_neighbour(start,l)
 
+	if start.network.size > finish.network.size:
+		start.network.unite(finish)
+	else:
+		finish.network.unite(start)
 
 	get_tree().root.add_child(l)
 	queue_free()

@@ -5,6 +5,8 @@ class_name ComponentInstance
 @export var sprite: Sprite2D
 @export var selection_circle: SelectionCircle
 
+var network : Network 
+
 var text_above: Label
 
 var neighbours: Array[ComponentInstance]
@@ -17,6 +19,7 @@ func connect_neighbour(neighbour: ComponentInstance,wire : Wire) -> void:
 	updated.emit(self)
 	component.on_connect(neighbour,self)
 	wires.append(wire)
+
 	PopTextCreatorInstance.pop_text(global_position,"connected",Color.GREEN)
 
 func _mouse_enter() -> void:
@@ -68,8 +71,14 @@ func _ready() -> void:
 	text_above = ConnectionLabel.new()
 	text_above.setup(self)
 	text_above.global_position += global_position
+
 	add_to_group("on_turn_end")
 	add_to_group("on_turn_start")
+
+	if !network:
+		network = Network.new()
+		network.add(self)
+
 	get_tree().root.add_child(text_above)
 
 func set_component(comp: Component):
