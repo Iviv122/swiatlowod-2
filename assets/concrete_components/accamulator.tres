@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_dt837")
+Name = "Accamulator"
 on_turn_end_desc = "Triggers itself"
 on_trigger_desc = "Triggers neighbour n times
 Where n is grid size

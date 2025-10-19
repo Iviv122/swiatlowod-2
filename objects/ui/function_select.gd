@@ -13,10 +13,12 @@ func setup(_res : ComponentStash):
 	icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	vertical_icon_alignment = VERTICAL_ALIGNMENT_TOP
 	icon = res.comp.sprite 
+	tooltip_text = _res.comp.to_string()
 
 	res.used.connect(update)
 	res.ended.connect(update)
 	update()
+
 
 func update():
 	if res.amount == 0:

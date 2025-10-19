@@ -28,3 +28,11 @@ func on_turn_start(s : ComponentInstance) -> void:
 # change compoment on right click
 func switch(_neighbour : Array[ComponentInstance],s : ComponentInstance )-> void:
 	pass
+
+func _to_string() -> String:
+	var res = ""
+	if on_trigger_desc != "":
+		res += "On trigger:\n"+ on_trigger_desc + "\n\n"
+	if on_turn_end_desc != "":
+		res += "On turn end:\n"+ on_turn_end_desc + "\n\n"
+	return res

@@ -9,6 +9,8 @@ func set_pack(pack : ComponentPack) -> void:
 	for i in my_pack.components:
 		text += i.comp.Name + "\n"
 
+	tooltip_text = my_pack.to_string()
+
 func _pressed() -> void:
 	GameStateInstance.change_state(GameState.State.Playing)
 	for i in my_pack.components:
