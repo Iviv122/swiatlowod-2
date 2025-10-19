@@ -19,7 +19,8 @@ func on_turn_end():
 	if points_label.points >= points_label.req:
 		GameStateInstance.change_state(GameState.State.Selecting)
 	else:
-		print("Lose")
+		GameStateInstance.change_state(GameState.State.Lost)
 
+	await get_tree().process_frame
 	turn+=1
 	points_label.set_requirement(turn*10)

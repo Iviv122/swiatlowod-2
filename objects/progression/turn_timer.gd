@@ -27,7 +27,7 @@ func tick() -> void:
 
 	time -=1	
 	text = str(int(time))
-	AudioPlayerInstance.play(tick_sound)
+	AudioPlayerInstance.urgent_play(tick_sound)
 	await get_tree().create_timer(1).timeout
 	tick()
 

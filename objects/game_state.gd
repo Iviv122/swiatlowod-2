@@ -15,5 +15,6 @@ func change_state(s : State):
 enum State{
     Playing,
     Selecting,
-    Tutorial
+    Tutorial,
+    Lost
 }
